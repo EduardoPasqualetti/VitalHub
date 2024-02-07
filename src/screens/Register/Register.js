@@ -4,7 +4,7 @@ import { Logo } from "../../components/Logo/Style"
 import { ButtonTitle, TextRec, Title } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Style"
 import { Btn } from "../../components/Button/Button"
-import { LinkResend } from "../../components/Link/Link"
+import { LinkCancel } from "../../components/Link/Style"
 
 export const Register = ({navigation}) => {
     return(
@@ -23,7 +23,7 @@ export const Register = ({navigation}) => {
                 <ButtonTitle>CADASTRAR</ButtonTitle>
             </Btn>
 
-            <LinkResend onPress={() => navigation.navigate("Login")}>Cancelar</LinkResend>
+            <LinkCancel onPress={() => navigation.navigate("Login")}>Cancelar</LinkCancel>
 
         </Container>
     )

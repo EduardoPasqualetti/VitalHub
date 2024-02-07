@@ -18,3 +18,19 @@ flex-direction: row;
 gap: 25px;
 margin-top: 20px;
 `
+
+export const BtnReturn = styled.TouchableOpacity`
+position: absolute;
+align-self: flex-start;
+margin-top: 85px;
+margin-left: 20px;  
+`
+
+export const IconReturn = styled.Image`
+width: 40px;
+height: 40px;
+`   
+export const IconClose = styled(IconReturn)`
+width: 35px;
+height: 35px;
+`

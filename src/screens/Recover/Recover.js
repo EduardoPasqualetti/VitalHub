@@ -2,11 +2,16 @@ import { Container } from "../../components/Container/Style"
 import { Logo } from "../../components/Logo/Style"
 import { ButtonTitle, TextRec, Title } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Style"
-import { Btn } from "../../components/Button/Button"
+import { Btn, BtnReturn, IconReturn } from "../../components/Button/Button"
 
-export const EmailCode = ({navigation}) => {
+export const Recover = ({navigation}) => {
     return (
         <Container>
+            
+            <BtnReturn onPress={() => navigation.navigate("Login")}>
+                 <IconReturn source={require("../../assets/return.png")}/>
+            </BtnReturn>
+           
             <Logo source={require('../../assets/logo.png')}></Logo>
 
             <Title>Recuperar Senha</Title>
@@ -17,7 +22,7 @@ export const EmailCode = ({navigation}) => {
 
             <Btn onPress={() => navigation.navigate("VerifyEmail")}>
                 <ButtonTitle>CONTINUAR</ButtonTitle>
-            </Btn>
+            </Btn>  
 
         </Container>
     )

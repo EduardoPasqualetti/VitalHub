@@ -3,7 +3,7 @@ import { Container, ContentAccount } from "../../components/Container/Style"
 import { Logo } from "../../components/Logo/Style"
 import { ButtonGoogleTitle, ButtonTitle, ImgGoogle, TextAccount, Title } from "../../components/Title/Style"
 import { Input } from "../../components/Input/Style"
-import { LinkCreate, LinkMedium } from "../../components/Link/Link"
+import { LinkCreate, LinkMedium } from "../../components/Link/Style"
 import { Btn, BtnGoogle } from "../../components/Button/Button"
 import { Image } from "react-native"
 
@@ -21,7 +21,7 @@ export const Login = ({navigation}) => {
             <Input placeholder={"Usuário ou E-mail"} />
             <Input placeholder={"Senha"} />
 
-            <LinkMedium onPress={() => navigation.navigate("EmailCode")} >Esqueceu sua senha?</LinkMedium>
+            <LinkMedium onPress={() => navigation.navigate("Recover")} >Esqueceu sua senha?</LinkMedium>
 
 
             <Btn>

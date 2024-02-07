@@ -3,14 +3,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Navigation } from './src/screens/Navigation/Navigation';
 import { Login } from './src/screens/Login/Login';
 import { Register } from './src/screens/Register/Register';
-import { EmailCode } from './src/screens/EmailCode/EmailCode';
-
 const Stack = createNativeStackNavigator()
 
 import { MontserratAlternates_600SemiBold, useFonts } from '@expo-google-fonts/montserrat-alternates';
 import { Quicksand_500Medium } from '@expo-google-fonts/quicksand';
 import { VerifyEmail } from './src/screens/VerifyEmail/VerifyEmail';
 import { ResetPwd } from './src/screens/ResetPwd/ResetPwd';
+import { Recover } from './src/screens/Recover/Recover';
 
 export default function App() {
 
@@ -61,11 +60,11 @@ export default function App() {
         />
         
         <Stack.Screen
-          name="EmailCode"
+          name="Recover"
 
-          component={EmailCode}
+          component={Recover}
 
-          options={{title: 'EmailCode'}}
+          options={{title: 'Recover'}}
         />
 
         <Stack.Screen

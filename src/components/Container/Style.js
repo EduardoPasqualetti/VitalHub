@@ -20,4 +20,4 @@ height: 70px;
 flex-direction: row;
 margin-top: 30px;
 justify-content: space-between;
-`
+`   

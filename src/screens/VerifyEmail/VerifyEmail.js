@@ -1,13 +1,18 @@
-import { Btn } from "../../components/Button/Button"
-import { Container, ContentAccount, ContentCode } from "../../components/Container/Style"
-import { Input, InputCode } from "../../components/Input/Style"
-import { LinkResend } from "../../components/Link/Link"
+import { Btn, BtnReturn, IconClose } from "../../components/Button/Button"
+import { Container, ContentCode } from "../../components/Container/Style"
+import { InputCode } from "../../components/Input/Style"
+import { LinkResend } from "../../components/Link/Style"
 import { Logo } from "../../components/Logo/Style"
 import { ButtonTitle, TextRec, TextUser, Title } from "../../components/Title/Style"
 
 export const VerifyEmail = ({ navigation }) => {
     return (
         <Container>
+            
+            <BtnReturn onPress={() => navigation.navigate("Login")}>
+                 <IconClose  source={require("../../assets/close.png")}/>
+            </BtnReturn>
+
             <Logo source={require('../../assets/logo.png')}></Logo>
 
             <Title>Verifique seu e-mail</Title>

@@ -13,11 +13,15 @@ text-decoration: underline;
 
 export const LinkCreate = styled.Text`
 font-family: 'MontserratAlternates_600SemiBold';
-font-size: 15px;
+font-size: 16px;
 color: #4D659D;
 text-decoration: underline;
 `
-
 export const LinkResend = styled(LinkCreate)`
 margin-top: 50px;
+`
+
+export const LinkCancel = styled(LinkCreate)`
+margin-top: 50px;
+font-size: 18px;
 `

@@ -24,7 +24,7 @@ height: 18px;
 `
 
 export const TextAccount = styled.Text`
-font-size: 15px;
+font-size: 16px;
 font-family: 'MontserratAlternates_600SemiBold';
 color: #4E4B59;
 `
