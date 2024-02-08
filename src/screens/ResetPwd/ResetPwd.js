@@ -22,7 +22,7 @@ export const ResetPwd = ({ navigation }) => {
             <Input placeholder={"Nova senha"} />
             <Input placeholder={"Confirmar nova senha"} />
 
-            <Btn onPress={() => navigation.navigate("")}>
+            <Btn onPress={() => navigation.navigate("Login")}>
                 <ButtonTitle>Confirmar nova senha</ButtonTitle>
             </Btn>
 

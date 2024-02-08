@@ -20,4 +20,38 @@ height: 70px;
 flex-direction: row;
 margin-top: 30px;
 justify-content: space-between;
-`   
+`
+
+export const ContainerScroll = styled.ScrollView`
+flex: 1;
+`
+
+export const ContainerSafe = styled.SafeAreaView`
+width: 90%;
+height: 100%;
+align-self: center;
+align-items: center;
+`
+export const ContainerSafeEdit = styled(ContainerSafe)`
+margin-top: 120px;
+`
+
+
+export const ViewFormat = styled.View`
+flex-direction: row;
+gap: 35px;
+`
+
+export const ViewTitle = styled.View`
+width: 80%;
+height: 130px;
+position: absolute;
+z-index: 99;
+margin-bottom: 20px;
+background-color: #FFFFFF;
+border-radius: 7px;
+align-self: center;
+align-items: center;
+justify-content: center;
+margin-top: 280px;
+`

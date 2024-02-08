@@ -41,3 +41,20 @@ export const TextUser = styled(TextRec)`
 color: #496BBA;
 margin-top: 3px;
     `
+
+export const TitleProfile = styled(TextAccount)`
+
+margin-top: 20px;
+font-size: 24px;
+`
+
+export const EmailProfile = styled(TextRec)`
+font-size: 18px;
+color: #4E4B59;
+margin-bottom: 40px;
+margin-top: 10px;
+`
+
+export const BtnProfile = styled(ButtonTitle)`
+font-family: 'MontserratAlternates_700Bold';
+`

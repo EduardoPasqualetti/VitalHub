@@ -3,21 +3,27 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Navigation } from './src/screens/Navigation/Navigation';
 import { Login } from './src/screens/Login/Login';
 import { Register } from './src/screens/Register/Register';
-const Stack = createNativeStackNavigator()
-
-import { MontserratAlternates_600SemiBold, useFonts } from '@expo-google-fonts/montserrat-alternates';
-import { Quicksand_500Medium } from '@expo-google-fonts/quicksand';
 import { VerifyEmail } from './src/screens/VerifyEmail/VerifyEmail';
 import { ResetPwd } from './src/screens/ResetPwd/ResetPwd';
 import { Recover } from './src/screens/Recover/Recover';
+import { Profile } from './src/screens/Profile/Profile';
+
+const Stack = createNativeStackNavigator()
+
+import {useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold  } from '@expo-google-fonts/montserrat-alternates';
+import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
+
 
 export default function App() {
 
-  const[fontsLoaded, fontsError] = useFonts({
+  const [fontsLoaded, fontsError] = useFonts({
     MontserratAlternates_600SemiBold,
-    Quicksand_500Medium
+    MontserratAlternates_500Medium,
+    MontserratAlternates_700Bold,
+    Quicksand_500Medium,
+    Quicksand_600SemiBold
   })
-  
+
   if (!fontsLoaded && !fontsError) {
     return null
   }
@@ -31,16 +37,24 @@ export default function App() {
 
       {/* componente para navegacao */}
       <Stack.Navigator screenOptions={{
-        headerShown:false
+        headerShown: false
       }}>
 
         <Stack.Screen
-        // nome da tela
+          name="Profile"
+
+          component={Profile}
+
+          options={{ title: 'Profile' }}
+        />
+
+        <Stack.Screen
+          // nome da tela
           name='Navegacao'
           // componente que sera a tela
           component={Navigation}
-          
-          options={{title: 'Navegacao'}}
+
+          options={{ title: 'Navegacao' }}
         />
 
         <Stack.Screen
@@ -48,7 +62,7 @@ export default function App() {
 
           component={Login}
 
-          options={{title: 'Login'}}
+          options={{ title: 'Login' }}
         />
 
         <Stack.Screen
@@ -56,15 +70,15 @@ export default function App() {
 
           component={Register}
 
-          options={{title: 'Register'}}
+          options={{ title: 'Register' }}
         />
-        
+
         <Stack.Screen
           name="Recover"
 
           component={Recover}
 
-          options={{title: 'Recover'}}
+          options={{ title: 'Recover' }}
         />
 
         <Stack.Screen
@@ -72,7 +86,7 @@ export default function App() {
 
           component={VerifyEmail}
 
-          options={{title: 'VerifyEmail'}}
+          options={{ title: 'VerifyEmail' }}
         />
 
         <Stack.Screen
@@ -80,10 +94,12 @@ export default function App() {
 
           component={ResetPwd}
 
-          options={{title: 'ResetPwd'}}
+          options={{ title: 'ResetPwd' }}
         />
 
-      
+
+
+
       </Stack.Navigator>
 
     </NavigationContainer>
