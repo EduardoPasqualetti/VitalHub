@@ -10,7 +10,7 @@ import { Profile } from './src/screens/Profile/Profile';
 
 const Stack = createNativeStackNavigator()
 
-import {useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold  } from '@expo-google-fonts/montserrat-alternates';
+import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates';
 import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
 
 
@@ -40,14 +40,7 @@ export default function App() {
         headerShown: false
       }}>
 
-        <Stack.Screen
-          name="Profile"
-
-          component={Profile}
-
-          options={{ title: 'Profile' }}
-        />
-
+        {/* 
         <Stack.Screen
           // nome da tela
           name='Navegacao'
@@ -55,7 +48,7 @@ export default function App() {
           component={Navigation}
 
           options={{ title: 'Navegacao' }}
-        />
+        /> */}
 
         <Stack.Screen
           name="Login"
@@ -73,6 +66,14 @@ export default function App() {
           options={{ title: 'Register' }}
         />
 
+        <Stack.Screen
+          name="Profile"
+
+          component={Profile}
+
+          options={{ title: 'Profile' }}
+        />
+        
         <Stack.Screen
           name="Recover"
 

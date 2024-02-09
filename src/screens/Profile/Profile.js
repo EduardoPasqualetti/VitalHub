@@ -23,25 +23,25 @@ export const Profile = () => {
 
                         <BoxInput
                             textLabel={'Data de nascimento:'}
-                            fiedlValue={'04/05/1999'}
+                            fieldValue={'04/05/1999'}
                         />
                         <BoxInput
                             textLabel={'CPF'}
-                            fiedlValue={'859********'}
+                            fieldValue={'859********'}
                         />
                         <BoxInput
                             textLabel={'Endereço'}
-                            fiedlValue={'Rua Vicenso Silva, 987'}
+                            fieldValue={'Rua Vicenso Silva, 987'}
                         />
                         <ViewFormat>
                             <BoxInput
                                 textLabel={'Cep'}
-                                fiedlValue={'06548-909'}
+                                fieldValue={'06548-909'}
                                 fieldWidth={'45'}
                             />
                             <BoxInput
                                 textLabel={'Cidade'}
-                                fiedlValue={'Moema-SP'}
+                                fieldValue={'Moema-SP'}
                                 fieldWidth={'45'}
                             />
                         </ViewFormat>
@@ -67,29 +67,29 @@ export const Profile = () => {
                     <ContainerSafeEdit>
                         <BoxInput
                             textLabel={'Data de nascimento:'}
-                            fiedlValue={'04/05/1999'}
+                            fieldValue={'04/05/1999'}
                             editable={true}
                         />
                         <BoxInput
                             textLabel={'CPF'}
-                            fiedlValue={'859********'}
+                            fieldValue={'859********'}
                             editable={true}
                         />
                         <BoxInput
                             textLabel={'Endereço'}
-                            fiedlValue={'Rua Vicenso Silva, 987'}
+                            fieldValue={'Rua Vicenso Silva, 987'}
                             editable={true}
                         />
                         <ViewFormat>
                             <BoxInput
                                 textLabel={'Cep'}
-                                fiedlValue={'06548-909'}
+                                fieldValue={'06548-909'}
                                 fieldWidth={'45'}
                                 editable={true}
                             />
                             <BoxInput
                                 textLabel={'Cidade'}
-                                fiedlValue={'Moema-SP'}
+                                fieldValue={'Moema-SP'}
                                 fieldWidth={'45'}
                                 editable={true}
                             />

@@ -8,14 +8,14 @@ export const BoxInput =({
     fieldWidth = 100,
     textLabel,
     placeholder,
-    fiedlValue,
+    fieldValue,
     editable = false
 }) =>  {
     return(
         <FieldContent fieldWidth={fieldWidth}>
             
             <LabelBox textLabel={textLabel}/>
-            <InputForBox placeholder={placeholder} fiedlValue={fiedlValue} editable={editable}/>
+            <InputForBox placeholder={placeholder} fieldValue={fieldValue} editable={editable}/>
         
         </FieldContent>
     )
