@@ -28,7 +28,7 @@ export const Login = ({navigation}) => {
                 <ButtonTitle>ENTRAR</ButtonTitle>
             </Btn>
 
-            <BtnGoogle>
+            <BtnGoogle  onPress={() => navigation.navigate("MedicalRecord")}>
                 <ImgGoogle source={require("../../assets/GOOGLE.png")} />
                 <ButtonGoogleTitle>ENTRAR COM GOOGLE</ButtonGoogleTitle>
             </BtnGoogle>

@@ -1,7 +1,7 @@
 import { Button, Text } from "react-native"
-import { ContainerSafe, ContainerSafeEdit, ContainerScroll, ViewFormat, ViewTitle } from "../../components/Container/Style"
+import { ContainerProfile, ContainerSafeEdit, ContainerScroll, ViewFormat, ViewTitle } from "../../components/Container/Style"
 import { ProfileImage } from "../../components/Images/Style"
-import { ButtonTitle, EmailProfile, TitleProfile } from "../../components/Title/Style"
+import { ButtonTitle, SubTitleProfile, TitleProfile } from "../../components/Title/Style"
 import { BoxInput } from "../../components/BoxInput/Index"
 import { Btn } from "../../components/Button/Button"
 import { StatusBar } from "expo-status-bar"
@@ -17,13 +17,15 @@ export const Profile = () => {
                 <>
 
                     <ProfileImage source={require("../../assets/photo.png")} />
-                    <ContainerSafe>
+
+                    <ContainerProfile>
                         <TitleProfile>Richard Kosta</TitleProfile>
-                        <EmailProfile>richard.kosta@gmail.com</EmailProfile>
+                        <SubTitleProfile>richard.kosta@gmail.com</SubTitleProfile>
 
                         <BoxInput
                             textLabel={'Data de nascimento:'}
                             fieldValue={'04/05/1999'}
+                            
                         />
                         <BoxInput
                             textLabel={'CPF'}
@@ -46,13 +48,10 @@ export const Profile = () => {
                             />
                         </ViewFormat>
 
-                        <Btn>
-                            <ButtonTitle>ENTRAR</ButtonTitle>
-                        </Btn>
                         <Btn onPress={() => setProfileEdit(true)}>
                             <ButtonTitle>EDITAR</ButtonTitle>
                         </Btn>
-                    </ContainerSafe>
+                    </ContainerProfile>
                 </>
             ) : (
                 <>
@@ -61,7 +60,7 @@ export const Profile = () => {
 
                     <ViewTitle>
                         <TitleProfile>Richard Kosta</TitleProfile>
-                        <EmailProfile>richard.kosta@gmail.com</EmailProfile>
+                        <SubTitleProfile>richard.kosta@gmail.com</SubTitleProfile>
                     </ViewTitle>
 
                     <ContainerSafeEdit>
@@ -69,6 +68,7 @@ export const Profile = () => {
                             textLabel={'Data de nascimento:'}
                             fieldValue={'04/05/1999'}
                             editable={true}
+                           
                         />
                         <BoxInput
                             textLabel={'CPF'}
@@ -92,6 +92,7 @@ export const Profile = () => {
                                 fieldValue={'Moema-SP'}
                                 fieldWidth={'45'}
                                 editable={true}
+                            
                             />
                         </ViewFormat>
 

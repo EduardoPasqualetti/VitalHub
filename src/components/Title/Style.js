@@ -48,13 +48,21 @@ margin-top: 20px;
 font-size: 24px;
 `
 
-export const EmailProfile = styled(TextRec)`
+export const SubTitleProfile = styled(TextRec)`
 font-size: 18px;
 color: #4E4B59;
 margin-bottom: 40px;
 margin-top: 10px;
 `
 
+
+export const SubtitleRecord = styled.Text`
+font-size: 16px;
+font-family: 'Quicksand_500Medium';
+color: #4E4B59;
+`
+
 export const BtnProfile = styled(ButtonTitle)`
 font-family: 'MontserratAlternates_700Bold';
+
 `

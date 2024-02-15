@@ -24,15 +24,16 @@ justify-content: space-between;
 
 export const ContainerScroll = styled.ScrollView`
 flex: 1;
+background-color: white;
 `
 
-export const ContainerSafe = styled.SafeAreaView`
+export const ContainerProfile = styled.View`
 width: 90%;
 height: 100%;
 align-self: center;
 align-items: center;
 `
-export const ContainerSafeEdit = styled(ContainerSafe)`
+export const ContainerSafeEdit = styled(ContainerProfile)`
 margin-top: 120px;
 `
 
@@ -54,4 +55,14 @@ align-self: center;
 align-items: center;
 justify-content: center;
 margin-top: 280px;
+`
+
+export const ViewTitleRecord = styled.View`
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+width: 85%;
+height: 50px;
+padding: 3%;
+margin-bottom: 30px;
 `

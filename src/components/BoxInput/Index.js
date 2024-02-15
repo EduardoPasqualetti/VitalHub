@@ -1,6 +1,5 @@
-import { InputForBox } from "../InputForBox/Index"
-import { LabelBox } from "../LabelBox/Index"
-import { FieldContent } from "./Style"
+
+import { FieldContent, InputLabel, InputText } from "./Style"
 
 
 
@@ -9,13 +8,20 @@ export const BoxInput =({
     textLabel,
     placeholder,
     fieldValue,
-    editable = false
+    fieldHeight = 60,
+    fontSize = 16,
+    editable = false,
+    borderColor,
+    backColor,
+    color,
+    font
 }) =>  {
     return(
         <FieldContent fieldWidth={fieldWidth}>
             
-            <LabelBox textLabel={textLabel}/>
-            <InputForBox placeholder={placeholder} fieldValue={fieldValue} editable={editable}/>
+            <InputLabel >{textLabel}</InputLabel>
+            <InputText placeholder={placeholder} value={fieldValue} editable={editable} borderColor={borderColor} 
+            fieldHeight={fieldHeight} backColor={backColor} color={color} font={font} fontSize={fontSize}/>
         
         </FieldContent>
     )

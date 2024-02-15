@@ -12,6 +12,7 @@ const Stack = createNativeStackNavigator()
 
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates';
 import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
+import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
 
 
 export default function App() {
@@ -40,15 +41,6 @@ export default function App() {
         headerShown: false
       }}>
 
-        {/* 
-        <Stack.Screen
-          // nome da tela
-          name='Navegacao'
-          // componente que sera a tela
-          component={Navigation}
-
-          options={{ title: 'Navegacao' }}
-        /> */}
 
         <Stack.Screen
           name="Login"
@@ -56,6 +48,14 @@ export default function App() {
           component={Login}
 
           options={{ title: 'Login' }}
+        />
+
+        <Stack.Screen
+          name="MedicalRecord"
+
+          component={MedicalRecord}
+
+          options={{ title: 'MedicalRecord' }}
         />
 
         <Stack.Screen
@@ -73,7 +73,7 @@ export default function App() {
 
           options={{ title: 'Profile' }}
         />
-        
+
         <Stack.Screen
           name="Recover"
 
