@@ -14,14 +14,15 @@ export const BoxInput =({
     borderColor,
     backColor,
     color,
-    font
+    font,
+    placeholderColor
 }) =>  {
     return(
         <FieldContent fieldWidth={fieldWidth}>
             
             <InputLabel >{textLabel}</InputLabel>
             <InputText placeholder={placeholder} value={fieldValue} editable={editable} borderColor={borderColor} 
-            fieldHeight={fieldHeight} backColor={backColor} color={color} font={font} fontSize={fontSize}/>
+            fieldHeight={fieldHeight} backColor={backColor} color={color} font={font} fontSize={fontSize} placeholderColor={placeholderColor}/>
         
         </FieldContent>
     )

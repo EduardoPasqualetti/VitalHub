@@ -13,6 +13,8 @@ const Stack = createNativeStackNavigator()
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates';
 import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
+import { HomeDoctor } from './src/screens/HomeDoctor/HomeDoctor';
+import { Home } from './src/screens/Home/Home';
 
 
 export default function App() {
@@ -31,16 +33,29 @@ export default function App() {
 
   return (
 
-
-
     // Envolve a estrutura da navegacao
     <NavigationContainer>
 
-      {/* componente para navegacao */}
+
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
 
+        <Stack.Screen
+          name='Navigation'
+
+          component={Navigation}
+
+          options={{title: 'Navigation'}}
+        />
+
+        <Stack.Screen
+          name='Home'
+          
+          component={Home}
+
+          options={{title: 'Home'}}
+          />
 
         <Stack.Screen
           name="Login"

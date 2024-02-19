@@ -18,10 +18,10 @@ color: #33303E;
 font-size: 18px;
 `
 
-export const InputText = styled.TextInput.attrs({
-    placeholderTextColor: '#34898F'
-    
-})`
+export const InputText = styled.TextInput.attrs(props => ({
+    placeholderTextColor: props.placeholderColor || '#4E4B59'
+ }) )
+`
 border-color: ${props => props.borderColor || 'transparent'}; 
 width: 100%;
 height: ${props => `${props.fieldHeight}px`};

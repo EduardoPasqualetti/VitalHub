@@ -8,7 +8,7 @@ import { Btn } from "../../components/Button/Button"
 
 export const MedicalRecord = () => {
 
-    const [recordEdit, setRecordEdit] = useState(false)
+    const [recordEdit, setRecordEdit] = useState(true)
 
     return (
         <ContainerScroll>
@@ -33,6 +33,8 @@ export const MedicalRecord = () => {
                             color={"#4E4B59"}
                             font={'MontserratAlternates_600SemiBold'}
                             fontSize={'17px'}
+
+                            placeholderColor={'#34898F'}
                         />
                         <BoxInput
                             textLabel={'Diagnóstico do paciente'}
@@ -43,6 +45,8 @@ export const MedicalRecord = () => {
                             color={"#4E4B59"}
                             font={'MontserratAlternates_600SemiBold'}
                             fontSize={'17px'}
+
+                            placeholderColor={'#34898F'}
                         />
                         <BoxInput
                             textLabel={'Prescrição médica'}
@@ -53,9 +57,11 @@ export const MedicalRecord = () => {
                             color={"#4E4B59"}
                             font={'MontserratAlternates_600SemiBold'}
                             fontSize={'17px'}
+
+                            placeholderColor={'#34898F'}
                         />
                         <Btn onPress={() => setRecordEdit(false)}>
-                            <ButtonTitle>SALVAR</ButtonTitle>
+                            <ButtonTitle>EDITAR</ButtonTitle>
                         </Btn>
                     </ContainerProfile>
 
@@ -65,6 +71,7 @@ export const MedicalRecord = () => {
                     <ProfileImage source={require("../../assets/photo.png")} />
 
                     <ContainerProfile>
+
                         <TitleProfile>Richard Kosta</TitleProfile>
                         <ViewTitleRecord>
                             <SubtitleRecord>22 anos</SubtitleRecord>
@@ -73,21 +80,42 @@ export const MedicalRecord = () => {
 
                         <BoxInput
                             textLabel={'Descrição da consulta'}
-                            fieldValue={"O paciente possuí uma infecção no ouvido Necessário repouse de 2 dias e acompanhamento médico constante"}
+                            placeholder={'Descricao'}
                             fieldHeight={150}
+                            borderColor={'#49B3BA'}
+                            backColor={'white'}
+                            color={"#4E4B59"}
+                            font={'MontserratAlternates_600SemiBold'}
+                            fontSize={'17px'}
+                            editable={true}
+                            placeholderColor={'#34898F'}
                         />
                         <BoxInput
                             textLabel={'Diagnóstico do paciente'}
-                            fieldValue={"Infeccao no ouvido"}
+                            placeholder={'Diagnóstico'}
+                            fieldHeight={80}
+                            borderColor={'#49B3BA'}
+                            backColor={'white'}
+                            color={"#4E4B59"}
+                            font={'MontserratAlternates_600SemiBold'}
+                            fontSize={'17px'}
+                            editable={true}
+                            placeholderColor={'#34898F'}
                         />
                         <BoxInput
                             textLabel={'Prescrição médica'}
-                            fieldValue={"Medicamento: Advil"}
+                            placeholder={'Prescrição médica'}
                             fieldHeight={150}
+                            borderColor={'#49B3BA'}
+                            backColor={'white'}
+                            color={"#4E4B59"}
+                            font={'MontserratAlternates_600SemiBold'}
+                            fontSize={'17px'}
+                            editable={true}
+                            placeholderColor={'#34898F'}
                         />
-
                         <Btn onPress={() => setRecordEdit(true)}>
-                            <ButtonTitle>EDITAR</ButtonTitle>
+                            <ButtonTitle>SALVAR</ButtonTitle>
                         </Btn>
                     </ContainerProfile>
                 </>

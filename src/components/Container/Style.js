@@ -66,3 +66,9 @@ height: 50px;
 padding: 3%;
 margin-bottom: 30px;
 `
+
+export const FilterAppointment = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    width: 92%;
+`
