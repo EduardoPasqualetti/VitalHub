@@ -5,10 +5,10 @@ export const Header = () => {
     return (
         <ContainerHeader>
         <BoxUser>
-          <ImageUser source={require('../../assets/garro.jpeg')} />
+          <ImageUser source={require('../../assets/medico.png')} />
           <DataUser>
             <TextDefault>Bem vindo !</TextDefault>
-            <NameUser>Dr.Garro</NameUser>
+            <NameUser>Dr. Carlos</NameUser>
           </DataUser>
         </BoxUser>
 

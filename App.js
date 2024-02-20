@@ -11,9 +11,8 @@ import { Profile } from './src/screens/Profile/Profile';
 const Stack = createNativeStackNavigator()
 
 import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Medium, MontserratAlternates_700Bold } from '@expo-google-fonts/montserrat-alternates';
-import { Quicksand_500Medium, Quicksand_600SemiBold } from '@expo-google-fonts/quicksand';
+import { Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
-import { HomeDoctor } from './src/screens/HomeDoctor/HomeDoctor';
 import { Home } from './src/screens/Home/Home';
 
 
@@ -24,7 +23,8 @@ export default function App() {
     MontserratAlternates_500Medium,
     MontserratAlternates_700Bold,
     Quicksand_500Medium,
-    Quicksand_600SemiBold
+    Quicksand_600SemiBold,
+    Quicksand_400Regular
   })
 
   if (!fontsLoaded && !fontsError) {
