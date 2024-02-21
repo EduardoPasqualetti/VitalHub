@@ -4,7 +4,7 @@ import { Btn } from "../Button/Button"
 import { LinkCancel } from "../Link/Style"
 import { ContentModal, ViewModal } from "./Style"
 
-const ModalCancel = ({ visible, setShowModalCancel, ...rest }) => {
+export const ModalCancel = ({ visible, setShowModalCancel, ...rest }) => {
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType="fade">
             <ViewModal>
@@ -23,4 +23,3 @@ const ModalCancel = ({ visible, setShowModalCancel, ...rest }) => {
     )
 }
 
-export default ModalCancel

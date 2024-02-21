@@ -5,7 +5,8 @@ import { Container, FilterAppointment, } from "../../components/Container/Style"
 import { Header } from "../../components/Header/Header"
 import { ListComponent } from "../../components/List/List"
 import { Card } from "../../components/Card/Card"
-import ModalCancel from "../../components/ModalCancel/ModalCancel"
+import { ModalCancel } from "../../components/ModalCancel/ModalCancel"
+import { ModalAppointment } from "../../components/ModalAppointment/ModalAppointment"
 
 
 const Consultas = [
@@ -68,6 +69,11 @@ export const Home = () => {
             <ModalCancel
             visible={showModalCancel}
             setShowModalCancel={setShowModalCancel}
+            />
+
+            <ModalAppointment
+            visible={showModalAppointment}
+            setShowModalAppointment={setShowModalAppointment}
             />
 
 
