@@ -5,6 +5,7 @@ import { Container, FilterAppointment, } from "../../components/Container/Style"
 import { Header } from "../../components/Header/Header"
 import { ListComponent } from "../../components/List/List"
 import { Card } from "../../components/Card/Card"
+import ModalCancel from "../../components/ModalCancel/ModalCancel"
 
 
 const Consultas = [
@@ -62,6 +63,11 @@ export const Home = () => {
                         onPressCancel={() => setShowModalCancel(true)}
                         />
                     )}
+            />
+
+            <ModalCancel
+            visible={showModalCancel}
+            setShowModalCancel={setShowModalCancel}
             />
 
 
