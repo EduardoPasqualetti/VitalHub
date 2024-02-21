@@ -8,6 +8,10 @@ height: 120px;
 flex-direction: row;
 border-radius: 7px;
 gap: 10px;
+background-color:#fff ;
+box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.08);
+align-self: center;
+margin-bottom: 20px;
 `
 
 export const ProfileImage = styled.Image`
@@ -40,19 +44,19 @@ align-items: center;
 
 export const TextAge = styled.Text`
 font-size: 15px;
-color: #8c8a97;
+color: #8C8A97;
 font-family: 'Quicksand_400Regular';
 `
 
 export const TextBold = styled(TextAge)`
 font-family: 'Quicksand_600SemiBold';
-
+color: ${(props) => props.situacao == "pendente" ? "#49B3BA" : "#4E4B59"};
 `
 
 export const ViewRow = styled.View`
 height: 40%;
 flex-direction: row;
-padding-right: 25px;
+padding-right: 15px;
 align-items: flex-end;
 justify-content: space-between;
 `
@@ -73,8 +77,9 @@ export const ButtonCard = styled.TouchableOpacity`
 `
 
 export const ButtonText = styled.Text`
-font-size: 16px;
-color: ${props => {props.situacao == "pendente" ? 'red' : 'blue'}};
+font-family: 'MontserratAlternates_500Medium';
+font-size: 14px;
+color: ${(props) => props.situacao == "pendente" ? "#c81d25" : "#344f8f"};
 `
 
 export const ImagePoint = styled.Image`

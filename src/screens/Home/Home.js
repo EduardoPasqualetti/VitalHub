@@ -8,15 +8,18 @@ import { Card } from "../../components/Card/Card"
 
 
 const Consultas = [
-    { id: 1, nome: "Edu", situacao: "pendente" },
-    { id: 2, nome: "Carlos", situacao: "cancelado" },
-    { id: 3, nome: "Gabriel", situacao: "realizado" },
+    { id: 1, nome: "Edu",age: 17,hour: '14:00', situacao: "pendente" },
+    { id: 2, nome: "Carlos",age: 40,hour: '20:00', situacao: "cancelado" },
+    { id: 3, nome: "Gabriel", age: 20,hour: '09:00', situacao: "realizado" },
 
 ]
 
 export const Home = () => {
 
     const [statusList, setStatusList] = useState("pendente")
+
+    const [showModalCancel,setShowModalCancel] = useState(false)
+    const [showModalAppointment,setShowModalAppointment] = useState(false)
 
     return (
         <Container>
@@ -54,8 +57,10 @@ export const Home = () => {
 
                 renderItem={({ item }) =>
                     statusList == item.situacao && (
-                        <Card  age={'17'} typeAp={'Rotina'}
-                            hour={'14:00'} source={require('../../assets/gab.jpg')} situacao={item.situacao} />
+                        <Card name={item.nome} situacao={item.situacao} age={item.age} hour={item.hour}
+                        onPressAppointment={() => setShowModalAppointment(true)}
+                        onPressCancel={() => setShowModalCancel(true)}
+                        />
                     )}
             />
 
