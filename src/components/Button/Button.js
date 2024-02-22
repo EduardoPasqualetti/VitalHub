@@ -34,3 +34,9 @@ export const IconClose = styled(IconReturn)`
 width: 35px;
 height: 35px;
 `
+
+export const ButtonGoOut = styled(Btn)`
+background-color: #ACABB7;
+width: 55%;
+margin-bottom: 50px;
+`

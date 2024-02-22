@@ -5,40 +5,42 @@ import { ButtonGoogleTitle, ButtonTitle, ImgGoogle, TextAccount, Title } from ".
 import { Input } from "../../components/Input/Style"
 import { LinkCreate, LinkMedium } from "../../components/Link/Style"
 import { Btn, BtnGoogle } from "../../components/Button/Button"
-import { Image } from "react-native"
+import { Image, Keyboard, TouchableWithoutFeedback } from "react-native"
 
 
-export const Login = ({navigation}) => {
+export const Login = ({ navigation }) => {
     return (
-        <Container>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+            <Container>
 
-            <Logo source={require('../../assets/logo.png')} />
+                <Logo source={require('../../assets/logo.png')} />
 
-            <Title>Entrar ou criar conta</Title>
-
-
-
-            <Input placeholder={"Usuário ou E-mail"} />
-            <Input placeholder={"Senha"} />
-
-            <LinkMedium onPress={() => navigation.navigate("Recover")} >Esqueceu sua senha?</LinkMedium>
+                <Title>Entrar ou criar conta</Title>
 
 
-            <Btn onPress={() => navigation.navigate("Profile")}>
-                <ButtonTitle>ENTRAR</ButtonTitle>
-            </Btn>
 
-            <BtnGoogle>
-                <ImgGoogle source={require("../../assets/GOOGLE.png")} />
-                <ButtonGoogleTitle>ENTRAR COM GOOGLE</ButtonGoogleTitle>
-            </BtnGoogle>
+                <Input placeholder={"Usuário ou E-mail"} />
+                <Input placeholder={"Senha"} />
 
-            <ContentAccount>
-                <TextAccount>Nao tem Conta?</TextAccount>
-                <LinkCreate onPress={() => navigation.navigate("Register")}>Crie uma conta agora!</LinkCreate >
-                
-            </ContentAccount>
+                <LinkMedium onPress={() => navigation.navigate("Recover")} >Esqueceu sua senha?</LinkMedium>
 
-        </Container>
+
+                <Btn onPress={() => navigation.navigate("Profile")}>
+                    <ButtonTitle>ENTRAR</ButtonTitle>
+                </Btn>
+
+                <BtnGoogle>
+                    <ImgGoogle source={require("../../assets/GOOGLE.png")} />
+                    <ButtonGoogleTitle>ENTRAR COM GOOGLE</ButtonGoogleTitle>
+                </BtnGoogle>
+
+                <ContentAccount>
+                    <TextAccount>Nao tem Conta?</TextAccount>
+                    <LinkCreate onPress={() => navigation.navigate("Register")}>Crie uma conta agora!</LinkCreate >
+
+                </ContentAccount>
+
+            </Container>
+        </TouchableWithoutFeedback>
     )
 }   

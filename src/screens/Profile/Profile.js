@@ -3,13 +3,15 @@ import { ContainerProfile, ContainerSafeEdit, ContainerScroll, ViewFormat, ViewT
 import { ProfileImage } from "../../components/Images/Style"
 import { ButtonTitle, SubTitleProfile, TitleProfile } from "../../components/Title/Style"
 import { BoxInput } from "../../components/BoxInput/Index"
-import { Btn } from "../../components/Button/Button"
+import { Btn, ButtonGoOut } from "../../components/Button/Button"
 import { StatusBar } from "expo-status-bar"
 import { useState } from "react"
+import { LinkCancelMargin } from "../../components/Link/Style"
 
-export const Profile = () => {
+export const Profile = ({navigation}) => {
 
     const [profileEdit, setProfileEdit] = useState(false)
+    
 
     return (
         <ContainerScroll>
@@ -24,26 +26,26 @@ export const Profile = () => {
 
                         <BoxInput
                             textLabel={'Data de nascimento:'}
-                            fieldValue={'04/05/1999'}
+                            placeholder={'04/05/1999'}
                             
                         />
                         <BoxInput
                             textLabel={'CPF'}
-                            fieldValue={'859********'}
+                            placeholder={'859********'}
                         />
                         <BoxInput
                             textLabel={'Endereço'}
-                            fieldValue={'Rua Vicenso Silva, 987'}
+                            placeholder={'Rua Vicenso Silva, 987'}
                         />
                         <ViewFormat>
                             <BoxInput
                                 textLabel={'Cep'}
-                                fieldValue={'06548-909'}
+                                placeholder={'06548-909'}
                                 fieldWidth={'45'}
                             />
                             <BoxInput
                                 textLabel={'Cidade'}
-                                fieldValue={'Moema-SP'}
+                                placeholder={'Moema-SP'}
                                 fieldWidth={'45'}
                             />
                         </ViewFormat>
@@ -51,6 +53,10 @@ export const Profile = () => {
                         <Btn onPress={() => setProfileEdit(true)}>
                             <ButtonTitle>EDITAR</ButtonTitle>
                         </Btn>
+
+                        <ButtonGoOut onPress={() => {navigation.navigate("Navigation")}}>
+                            <ButtonTitle>SAIR DO APP</ButtonTitle>
+                        </ButtonGoOut>
                     </ContainerProfile>
                 </>
             ) : (
@@ -66,13 +72,13 @@ export const Profile = () => {
                     <ContainerSafeEdit>
                         <BoxInput
                             textLabel={'Data de nascimento:'}
-                            fieldValue={'04/05/1999'}
+                            placeholder={'04/05/1999'}
                             editable={true}
-                           
+
                         />
                         <BoxInput
                             textLabel={'CPF'}
-                            fieldValue={'859********'}
+                            placeholder={'859********'}
                             editable={true}
                         />
                         <BoxInput
@@ -83,22 +89,24 @@ export const Profile = () => {
                         <ViewFormat>
                             <BoxInput
                                 textLabel={'Cep'}
-                                fieldValue={'06548-909'}
+                                placeholder={'06548-909'}
                                 fieldWidth={'45'}
                                 editable={true}
                             />
                             <BoxInput
                                 textLabel={'Cidade'}
-                                fieldValue={'Moema-SP'}
+                                placeholder={'Moema-SP'}
                                 fieldWidth={'45'}
                                 editable={true}
-                            
+
                             />
                         </ViewFormat>
 
                         <Btn onPress={() => setProfileEdit(false)}>
                             <ButtonTitle>SALVAR</ButtonTitle>
                         </Btn>
+
+                        <LinkCancelMargin onPress={() => { setProfileEdit(false) }}>Cancelar Edição</LinkCancelMargin>
 
                     </ContainerSafeEdit>
                 </>
