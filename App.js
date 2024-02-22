@@ -15,6 +15,7 @@ import { Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular } from
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
 import { Home } from './src/screens/Home/Home';
 import { ModalAppointment } from './src/components/ModalAppointment/ModalAppointment';
+import { HomeUser } from './src/screens/HomeUser/HomeUser';
 
 
 export default function App() {
@@ -56,6 +57,13 @@ export default function App() {
           component={Home}
 
           options={{title: 'Home'}}
+          />
+        <Stack.Screen
+          name='HomeUser'
+          
+          component={HomeUser}
+
+          options={{title: 'HomeUser'}}
           />
 
         <Stack.Screen

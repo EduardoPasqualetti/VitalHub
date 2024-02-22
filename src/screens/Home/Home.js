@@ -12,8 +12,7 @@ import { ModalAppointment } from "../../components/ModalAppointment/ModalAppoint
 const Consultas = [
     { id: 1, nome: "Edu",age: 17,hour: '14:00', situacao: "pendente" },
     { id: 2, nome: "Carlos",age: 40,hour: '20:00', situacao: "cancelado" },
-    { id: 3, nome: "Gabriel", age: 20,hour: '09:00', situacao: "realizado" },
-
+    { id: 3, nome: "Gabriel", age: 20,hour: '09:00', situacao: "realizado" }, 
 ]
 
 export const Home = ({navigation}) => {
@@ -25,7 +24,7 @@ export const Home = ({navigation}) => {
 
     return (
         <Container>
-            <Header />
+            <Header nome={'Dr. Carlos'} ProfileImage={require('../../assets/medico.png')}/>
 
             <CalendarHome />
 

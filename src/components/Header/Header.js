@@ -1,14 +1,14 @@
 import { BoxUser, ContainerHeader, DataUser, ImageUser, NameUser, TextDefault } from "./Style"
 import {MaterialIcons} from "@expo/vector-icons"
 
-export const Header = () => {
+export const Header = ({nome, ProfileImage}) => {
     return (
         <ContainerHeader>
         <BoxUser>
-          <ImageUser source={require('../../assets/medico.png')} />
+          <ImageUser source={ProfileImage} />
           <DataUser>
             <TextDefault>Bem vindo !</TextDefault>
-            <NameUser>Dr. Carlos</NameUser>
+            <NameUser>{nome}</NameUser>
           </DataUser>
         </BoxUser>
 

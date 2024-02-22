@@ -7,6 +7,8 @@ export const Card = ({
     onPressCancel,
     onPressAppointment,
     name, age, hour}) => {
+
+
     return (
         <ContainerCard>
             {/* Imagem do Card */}

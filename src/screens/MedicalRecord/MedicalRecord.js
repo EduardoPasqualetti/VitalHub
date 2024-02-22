@@ -27,9 +27,7 @@ export const MedicalRecord = ({navigation}) => {
 
                         <BoxInput
                             textLabel={'Descrição da consulta'}
-                            placeholder={`O paciente possuí uma infecção no
-                            ouvido. Necessário repouse de 2 dias
-                            e acompanhamento médico constante`}
+                            placeholder={`O paciente possuí uma infecção no ouvido. Necessário repouse de 2 dias e acompanhamento médico constante`}
                             fieldHeight={150}
                             multiline={true}
                             
@@ -41,15 +39,12 @@ export const MedicalRecord = ({navigation}) => {
                             multiline={true}
                         />
                         <BoxInput
-                            textLabel={'Prescrição médica'}
-                            placeholder={`Medicamento: Advil
-                            Dosagem: 50 mg
-                            Frequência: 3 vezes ao dia
-                            Duração: 3 dias`}
+                            textLabel={'Prescrição médica'} 
+                            placeholder={`Medicamento: Advil                  Dosagem: 50 mg               Frequência: 3 vezes ao dia                Duração: 3 dias`}
                             fieldHeight={150}
                             multiline={true}
-                        />
-                        <Btn onPress={() => setRecordEdit(false)}>
+                        /> 
+                        <Btn onPress={() => setRecordEdit(false)}> 
                             <ButtonTitle>EDITAR</ButtonTitle>
                         </Btn>
 
