@@ -40,3 +40,15 @@ background-color: #ACABB7;
 width: 55%;
 margin-bottom: 50px;
 `
+
+export const BtnSchedule = styled.TouchableOpacity`
+align-self: flex-end;
+margin-bottom: 80px;
+margin-right: 30px;
+width: 75px;
+height: 75px;
+background-color: #49B3BA;
+align-items: center;
+justify-content: center;
+border-radius: 8px;
+`

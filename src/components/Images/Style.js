@@ -6,6 +6,4 @@ width: 100%;
 height: 350px;
 `
 
-export const ImageModalAp = styled.Image`
 
-`
