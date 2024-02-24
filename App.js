@@ -16,6 +16,7 @@ import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
 import { Home } from './src/screens/Home/Home';
 import { ModalAppointment } from './src/components/ModalAppointment/ModalAppointment';
 import { HomeUser } from './src/screens/HomeUser/HomeUser';
+import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
 
 
 export default function App() {
@@ -121,11 +122,13 @@ export default function App() {
 
           options={{ title: 'ResetPwd' }}
         />
+        <Stack.Screen
+          name="SelectClinic"
 
+          component={SelectClinic}
 
-
-
-
+          options={{ title: 'SelectClinic' }}
+        />
 
       </Stack.Navigator>
 

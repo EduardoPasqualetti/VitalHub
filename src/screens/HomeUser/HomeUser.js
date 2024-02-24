@@ -7,7 +7,6 @@ import { ListComponent } from "../../components/List/List"
 import { Card } from "../../components/Card/Card"
 import { ModalCancel } from "../../components/ModalCancel/ModalCancel"
 import { ModalAppointment } from "../../components/ModalAppointment/ModalAppointment"
-import { ImageBtnSchedule } from "../../components/Images/Style"
 import { BtnSchedule } from "../../components/Button/Button"
 import { FontAwesome } from '@expo/vector-icons';
 import { ModalSchedule } from "../../components/ModalSchedule/ModalSchedule"

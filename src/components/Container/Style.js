@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.View`
     flex: 1;
     align-items: center;
+    height: 100%;
 `
 
 export const ContentAccount = styled.View`
@@ -71,4 +72,10 @@ export const FilterAppointment = styled.View`
     flex-direction: row;
     justify-content: space-between;
     width: 92%;
+`
+
+export const ViewScroll = styled.ScrollView`
+background-color: red;
+width: 90%;
+height: 50px;
 `

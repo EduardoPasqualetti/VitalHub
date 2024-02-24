@@ -1,13 +1,12 @@
 import { Modal, Text } from "react-native"
 import { BlueTitle, ContentModal, Option, OptionsContainer, RowContainerButton, TypeButton, SmallButton, TypeAppointment, ViewModal, TextOption } from "./Style"
 import { ButtonTitle, LabelSchedule, Title, TitleProfile } from "../Title/Style"
-import { Container } from "../Container/Style"
 import { useState } from "react"
 import { Btn } from "../Button/Button"
 import { LinkCancel } from "../Link/Style"
 
 
-export const ModalSchedule = ({ navigation, visible, setShowModalSchedule, ...rest }) => {
+export const ModalSchedule = ({ navigation, visible, setShowModalSchedule , ...rest }) => {
 
   const [showOptions, setShowOptions] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
@@ -19,6 +18,11 @@ export const ModalSchedule = ({ navigation, visible, setShowModalSchedule, ...re
     setSelectedOption(option);
     setShowOptions(false);
   };
+
+  const onPressHandle = () => {
+    navigation.navigate("SelectClinic");
+    setShowModalSchedule(false)
+  }
 
 
   return (
@@ -62,8 +66,8 @@ export const ModalSchedule = ({ navigation, visible, setShowModalSchedule, ...re
             </TypeButton>
 
           </TypeAppointment>
-          <Btn>
-            <ButtonTitle>CONTINUAR</ButtonTitle>
+          <Btn onPress={() => {onPressHandle()}}>
+            <ButtonTitle >CONTINUAR</ButtonTitle>
           </Btn>
 
           <LinkCancel onPress={() => setShowModalSchedule(false)}>Cancelar</LinkCancel>
