@@ -1,6 +1,6 @@
 import { ScrollView, Text, TouchableOpacity } from "react-native"
-import { Container, ViewScroll } from "../../components/Container/Style"
-import { Cancel, Title } from "./Style"
+import { Container } from "../../components/Container/Style"
+import { BtnSelect, Cancel, Title } from "./Style"
 import { Btn } from "../../components/Button/Button"
 import { ButtonTitle } from "../../components/Title/Style"
 import { LinkCancel } from "../../components/Link/Style"
@@ -16,7 +16,7 @@ const Clinicas = [
     { id: 4, nome: "SP Oncologia Clínica", Localizacao: "Taboão, SP",Avaliacao: "4,2", Abertura: "Seg-Sab" }, 
 ]
 
-export const SelectClinic = () => {
+export const SelectClinic = ({navigation}) => {
 
     const [selectedClinic, setSelectedClinic] = useState(null);
 
@@ -28,24 +28,22 @@ export const SelectClinic = () => {
         <Container>
             <Title>Selecionar clinica</Title>
 
-            <ScrollView>
                 { <ListComponent 
                 data={Clinicas}
                 renderItem={({ item }) =>
                       (
-                        <TouchableOpacity onPress={() => handleClinicSelect(item.id)}>
+                        <BtnSelect  onPress={() => handleClinicSelect(item.id)}>
                         <CardClinic name={item.nome} loc={item.Localizacao} aval={item.Avaliacao} date={item.Abertura}
                         
                         />
-                        </TouchableOpacity>
+                        </BtnSelect>
                     )}
                 /> }
                 <Text>{selectedClinic}</Text>
-            </ScrollView>
-            <Btn>
-                <ButtonTitle>CONTINUAR</ButtonTitle>
+            <Btn onPress={() => {navigation.navigate("SelectDoctor")}}>
+                <ButtonTitle >CONTINUAR</ButtonTitle>
             </Btn>
-            <Cancel>Cancelar</Cancel>
+            <Cancel onPress={() => {navigation.navigate("HomeUser")}}>Cancelar</Cancel>
         </Container>
 
 

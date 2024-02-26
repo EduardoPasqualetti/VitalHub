@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { LinkCancel } from "../../components/Link/Style"
 
 export const Title = styled.Text`
@@ -11,4 +11,10 @@ margin-top: 120px;
 
 export const Cancel = styled(LinkCancel)`
 margin-bottom: 60px;
+`
+
+export const BtnSelect = styled.TouchableOpacity`
+align-self: center;
+height: 120px;
+
 `

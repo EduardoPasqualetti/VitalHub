@@ -22,9 +22,8 @@ align-items: center;
 export const TypeAppointment = styled.View`
 width: 90%;
 height: 318px;
-margin-top: 30px;
-margin-bottom: 15px;    
-
+margin-bottom: 15px;   
+margin-top: 10px;
 `
 
 export const RowContainerButton = styled.View`
@@ -32,7 +31,6 @@ flex-direction: row;
 width: 100%;
 height: 55px;
 justify-content: space-between;
-margin-bottom: 30px;
 `
 
 export const SmallButton = styled.TouchableOpacity`
@@ -53,7 +51,7 @@ font-size: 15px;
 
 export const TypeButton = styled.TouchableOpacity`
 padding: 10px;
-margin-bottom: 30px;
+margin-bottom: 0px;
 border: 2px #60BFC5;
 border-radius: 5px;
 height: 65px;
@@ -63,6 +61,7 @@ justify-content: center;
 export const OptionsContainer = styled.View`
 gap: 5px;
 margin-bottom: 15px;
+background-color: 	#DCDCDC;
 `
 
 export const Option = styled.TouchableOpacity`

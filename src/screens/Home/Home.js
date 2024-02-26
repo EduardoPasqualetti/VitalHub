@@ -10,9 +10,9 @@ import { ModalAppointment } from "../../components/ModalAppointment/ModalAppoint
 
 
 const Consultas = [
-    { id: 1, nome: "Edu",age: 17,hour: '14:00', situacao: "pendente" },
-    { id: 2, nome: "Carlos",age: 40,hour: '20:00', situacao: "cancelado" },
-    { id: 3, nome: "Gabriel", age: 20,hour: '09:00', situacao: "realizado" }, 
+    { id: 1, nome: "Edu",idade: 17,Horario: '14:00', situacao: "pendente" },
+    { id: 2, nome: "Carlos",idade: 40,Horario: '20:00', situacao: "cancelado" },
+    { id: 3, nome: "Gabriel", idade: 20,Horario: '09:00', situacao: "realizado" }, 
 ]
 
 export const Home = ({navigation}) => {
@@ -21,6 +21,8 @@ export const Home = ({navigation}) => {
 
     const [showModalCancel,setShowModalCancel] = useState(false)
     const [showModalAppointment,setShowModalAppointment] = useState(false)
+
+    const[selectedAppointment, setSelectedAppointment]= useState(null)
 
     return (
         <Container>
@@ -58,8 +60,11 @@ export const Home = ({navigation}) => {
 
                 renderItem={({ item }) =>
                     statusList == item.situacao && (
-                        <Card name={item.nome} situacao={item.situacao} age={item.age} hour={item.hour}
-                        onPressAppointment={() => setShowModalAppointment(true)}
+                        <Card name={item.nome} situacao={item.situacao} age={item.idade} hour={item.Horario}
+                        onPressAppointment={() => {
+                            setSelectedAppointment(item)
+                            setShowModalAppointment(true)
+                        }}
                         onPressCancel={() => setShowModalCancel(true)}
                         />
                     )}
@@ -70,10 +75,11 @@ export const Home = ({navigation}) => {
             setShowModalCancel={setShowModalCancel}
             />
 
-            <ModalAppointment
+            <ModalAppoingittment
             visible={showModalAppointment}
             setShowModalAppointment={setShowModalAppointment}
             navigation={navigation}
+            appointmentData={selectedAppointment}
             />
 
 

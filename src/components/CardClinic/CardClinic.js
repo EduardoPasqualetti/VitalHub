@@ -1,11 +1,11 @@
-import { Text, TouchableOpacity } from "react-native"
+
 import { Container, TextAv, TextCalendar, TextLoc, TextName, View1, View2, ViewCalendar, ViewStar } from "./Style"
 import { AntDesign } from '@expo/vector-icons';
 
 export const CardClinic = ({ name, loc, aval, date }) => {
     return (
-        <>
-            <Container >
+        
+            <Container>
                 <View1>
                     <TextName>{name}</TextName>
                     <TextLoc>{loc}</TextLoc>
@@ -22,7 +22,6 @@ export const CardClinic = ({ name, loc, aval, date }) => {
 
                 </View2>
             </Container>
-        </>
 
     )
 }

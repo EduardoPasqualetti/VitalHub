@@ -17,6 +17,8 @@ import { Home } from './src/screens/Home/Home';
 import { ModalAppointment } from './src/components/ModalAppointment/ModalAppointment';
 import { HomeUser } from './src/screens/HomeUser/HomeUser';
 import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
+import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
+import { SelectData } from './src/screens/SelectData/SelectData';
 
 
 export default function App() {
@@ -128,6 +130,20 @@ export default function App() {
           component={SelectClinic}
 
           options={{ title: 'SelectClinic' }}
+        />
+        <Stack.Screen
+          name="SelectDoctor"
+
+          component={SelectDoctor}
+
+          options={{ title: 'SelectDoctor' }}
+        />
+        <Stack.Screen
+          name="SelectData"
+
+          component={SelectData}
+
+          options={{ title: 'SelectData' }}
         />
 
       </Stack.Navigator>

@@ -4,6 +4,7 @@ export const Container = styled.View`
     flex: 1;
     align-items: center;
     height: 100%;
+    
 `
 
 export const ContentAccount = styled.View`
