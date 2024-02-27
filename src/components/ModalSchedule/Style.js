@@ -21,7 +21,7 @@ align-items: center;
 
 export const TypeAppointment = styled.View`
 width: 90%;
-height: 318px;
+height: 250px;
 margin-bottom: 15px;   
 margin-top: 10px;
 `
@@ -40,6 +40,7 @@ border: #60BFC5;
 border-width: 2px;
 align-items: center;
 justify-content: center;
+background-color: ${props => props.isSelected ? '#60BFC5' : 'transparent'};
 `
 
 export const BlueTitle = styled.Text`
@@ -49,13 +50,17 @@ font-size: 15px;
 `
 
 
-export const TypeButton = styled.TouchableOpacity`
+export const InputLoc = styled.TextInput.attrs({
+    placeholderTextColor: '#34898F'
+})`
 padding: 10px;
 margin-bottom: 0px;
 border: 2px #60BFC5;
 border-radius: 5px;
 height: 65px;
 justify-content: center;
+font-family: 'MontserratAlternates_600SemiBold';
+font-size: 15px
 `
 
 export const OptionsContainer = styled.View`

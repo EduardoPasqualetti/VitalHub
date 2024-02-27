@@ -80,3 +80,11 @@ background-color: red;
 width: 90%;
 height: 50px;
 `
+
+export const ContainerSelectDate = styled.View`
+flex: 1;
+align-self: center;
+width: 90%;
+height: 300px;
+
+`

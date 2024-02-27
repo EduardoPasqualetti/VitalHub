@@ -1,5 +1,5 @@
 import { Modal, Text } from "react-native"
-import { BlueTitle, ContentModal, Option, OptionsContainer, RowContainerButton, TypeButton, SmallButton, TypeAppointment, ViewModal, TextOption } from "./Style"
+import { BlueTitle, ContentModal, Option, OptionsContainer, RowContainerButton, TypeButton, SmallButton, TypeAppointment, ViewModal, TextOption, InputLoc } from "./Style"
 import { ButtonTitle, LabelSchedule, Title, TitleProfile } from "../Title/Style"
 import { useState } from "react"
 import { Btn } from "../Button/Button"
@@ -24,6 +24,8 @@ export const ModalSchedule = ({ navigation, visible, setShowModalSchedule , ...r
     setShowModalSchedule(false)
   }
 
+  const[typeAppointment,setTypeAppointment] = useState(null)
+
 
   return (
     <Modal {...rest} visible={visible} transparent={true} animationType="fade">
@@ -32,13 +34,13 @@ export const ModalSchedule = ({ navigation, visible, setShowModalSchedule , ...r
           <TitleProfile>Agendar consulta</TitleProfile>
 
           <TypeAppointment>
-            <LabelSchedule>Informe o tipo de consulta</LabelSchedule>
 
-
-            {/* Select dos tipos de consulta */}
+            {/* SELECIONAR O TIPO DE CONSULTA */}
+            {/* <LabelSchedule>Informe o tipo de consulta</LabelSchedule>
+ 
             <TypeButton onPress={() => setShowOptions(true)}>
               <BlueTitle>{selectedOption || 'Tipo de consulta'}</BlueTitle>
-            </TypeButton>
+            </TypeButton> 
 
             {showOptions && (
               <OptionsContainer >
@@ -48,22 +50,29 @@ export const ModalSchedule = ({ navigation, visible, setShowModalSchedule , ...r
                   </Option>
                 ))}
               </OptionsContainer>
-            )}
+            )}*/}
 
 
-            {/* Selecionar qual o nivel da consulta */}
+            {/* SELECIONAR QUAL O NIVEL DA CONSULTA */}
             <LabelSchedule>Qual o nível da consulta</LabelSchedule>
             <RowContainerButton>
-              <SmallButton><BlueTitle>Rotina</BlueTitle></SmallButton>
-              <SmallButton><BlueTitle>Exames</BlueTitle></SmallButton>
-              <SmallButton><BlueTitle>Urgencia</BlueTitle></SmallButton>
+
+              <SmallButton onPress={() => {setTypeAppointment("Rotina")}} isSelected={typeAppointment == "Rotina"}>
+                <BlueTitle>Rotina</BlueTitle>
+                </SmallButton>
+              <SmallButton onPress={() => {setTypeAppointment("Exames")}} isSelected={typeAppointment == "Exames"}>
+                <BlueTitle>Exames</BlueTitle>
+                </SmallButton>
+              <SmallButton onPress={() => {setTypeAppointment("Urgencia")}} isSelected={typeAppointment == "Urgencia"}>
+                <BlueTitle>Urgencia</BlueTitle>
+                </SmallButton>
+
             </RowContainerButton>
 
-            {/* Informar a localizacao */}
+            {/* INFORMAR A LOCALIZACAO */}
             <LabelSchedule>Informe a localizacao desejada</LabelSchedule>
-            <TypeButton>
-              <BlueTitle>Informe a localização</BlueTitle>
-            </TypeButton>
+            <InputLoc placeholder={"Informe a localizacao"}/>
+            
 
           </TypeAppointment>
           <Btn onPress={() => {onPressHandle()}}>

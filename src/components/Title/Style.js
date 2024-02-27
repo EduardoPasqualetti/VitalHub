@@ -70,6 +70,6 @@ font-family: 'MontserratAlternates_700Bold';
 export const LabelSchedule = styled.Text`
 font-family: 'Quicksand_600SemiBold';
 margin-bottom: 10px;
-font-size: 15px;
-margin-top: 25px;
+font-size: 16px;
+margin-top: 20px;
 `

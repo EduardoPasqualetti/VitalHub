@@ -14,11 +14,10 @@ import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Med
 import { Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
 import { Home } from './src/screens/Home/Home';
-import { ModalAppointment } from './src/components/ModalAppointment/ModalAppointment';
 import { HomeUser } from './src/screens/HomeUser/HomeUser';
 import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
 import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
-import { SelectData } from './src/screens/SelectData/SelectData';
+import { SelectDate } from './src/screens/SelectDate/SelectDate';
 
 
 export default function App() {
@@ -139,11 +138,11 @@ export default function App() {
           options={{ title: 'SelectDoctor' }}
         />
         <Stack.Screen
-          name="SelectData"
+          name="SelectDate"
 
-          component={SelectData}
+          component={SelectDate}
 
-          options={{ title: 'SelectData' }}
+          options={{ title: 'SelectDate' }}
         />
 
       </Stack.Navigator>

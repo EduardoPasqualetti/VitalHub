@@ -9,6 +9,7 @@ border-radius: 7px;
 background-color:#fff ;
 box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.08);
 padding-top: 18px;
+border: ${props => props.isSelected ? '3px solid #496BBA' : 'none'};
 `
 
 export const View1 = styled.View`

@@ -1,9 +1,8 @@
-import { ScrollView, Text, TouchableOpacity } from "react-native"
+
 import { Container } from "../../components/Container/Style"
 import { BtnSelect, Cancel, Title } from "./Style"
 import { Btn } from "../../components/Button/Button"
 import { ButtonTitle } from "../../components/Title/Style"
-import { LinkCancel } from "../../components/Link/Style"
 import { ListComponent } from "../../components/List/List"
 import { CardClinic } from "../../components/CardClinic/CardClinic"
 import { useState } from "react"
@@ -20,9 +19,6 @@ export const SelectClinic = ({navigation}) => {
 
     const [selectedClinic, setSelectedClinic] = useState(null);
 
-    const handleClinicSelect = (clinicId) => {
-      setSelectedClinic(clinicId);
-    };
 
     return(
         <Container>
@@ -32,14 +28,18 @@ export const SelectClinic = ({navigation}) => {
                 data={Clinicas}
                 renderItem={({ item }) =>
                       (
-                        <BtnSelect  onPress={() => handleClinicSelect(item.id)}>
-                        <CardClinic name={item.nome} loc={item.Localizacao} aval={item.Avaliacao} date={item.Abertura}
+                        <BtnSelect  onPress={() => setSelectedClinic(item.id)}>
+                        <CardClinic name={item.nome}
+                                    loc={item.Localizacao}
+                                    aval={item.Avaliacao}
+                                    date={item.Abertura}
+                                    isSelected={item.id == selectedClinic}
                         
                         />
                         </BtnSelect>
                     )}
                 /> }
-                <Text>{selectedClinic}</Text>
+
             <Btn onPress={() => {navigation.navigate("SelectDoctor")}}>
                 <ButtonTitle >CONTINUAR</ButtonTitle>
             </Btn>
