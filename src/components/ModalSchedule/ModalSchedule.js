@@ -1,5 +1,5 @@
 import { Modal, Text } from "react-native"
-import { BlueTitle, ContentModal, Option, OptionsContainer, RowContainerButton, TypeButton, SmallButton, TypeAppointment, ViewModal, TextOption, InputLoc } from "./Style"
+import { BlueTitle, ContentModal,  RowContainerButton, TypeButton, SmallButton, TypeAppointment, ViewModal, InputAppointment } from "./Style"
 import { ButtonTitle, LabelSchedule, Title, TitleProfile } from "../Title/Style"
 import { useState } from "react"
 import { Btn } from "../Button/Button"
@@ -8,16 +8,15 @@ import { LinkCancel } from "../Link/Style"
 
 export const ModalSchedule = ({ navigation, visible, setShowModalSchedule , ...rest }) => {
 
-  const [showOptions, setShowOptions] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('');
+  // const [showOptions, setShowOptions] = useState(false);
+  // const [selectedOption, setSelectedOption] = useState('');
 
+  // const opcoes = ['Pediatria', 'Clinico geral', 'Cardiologista'];
 
-  const opcoes = ['Pediatria', 'Clinico geral', 'Cardiologista'];
-
-  const onPressOption = (option) => {
-    setSelectedOption(option);
-    setShowOptions(false);
-  };
+  // const onPressOption = (option) => {
+  //   setSelectedOption(option);
+  //   setShowOptions(false);
+  // };
 
   const onPressHandle = () => {
     navigation.navigate("SelectClinic");
@@ -71,13 +70,13 @@ export const ModalSchedule = ({ navigation, visible, setShowModalSchedule , ...r
 
             {/* INFORMAR A LOCALIZACAO */}
             <LabelSchedule>Informe a localizacao desejada</LabelSchedule>
-            <InputLoc placeholder={"Informe a localizacao"}/>
+            <InputAppointment placeholder={"Informe a localizacao"}/>
             
 
           </TypeAppointment>
           <Btn onPress={() => {onPressHandle()}}>
             <ButtonTitle >CONTINUAR</ButtonTitle>
-          </Btn>
+          </Btn>  
 
           <LinkCancel onPress={() => setShowModalSchedule(false)}>Cancelar</LinkCancel>
 

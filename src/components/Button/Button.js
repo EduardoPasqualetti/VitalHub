@@ -8,7 +8,7 @@ background-color: #496BBA;
 align-items: center;
 justify-content: center;
 margin-top: 40px;
-
+align-self: center;
 `
 
 export const BtnGoogle = styled(Btn)`
@@ -51,4 +51,8 @@ background-color: #49B3BA;
 align-items: center;
 justify-content: center;
 border-radius: 8px;
+`
+
+export const BtnFull = styled(Btn)`
+width: 100%;
 `

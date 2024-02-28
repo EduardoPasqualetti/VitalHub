@@ -18,10 +18,6 @@ export const ButtonGoogleTitle = styled(ButtonTitle)`
 color: #496BBA;
 `
 
-export const ImgGoogle = styled.Image`
-width: 18px;
-height: 18px;
-`
 
 export const TextAccount = styled.Text`
 font-size: 16px;
@@ -72,4 +68,10 @@ font-family: 'Quicksand_600SemiBold';
 margin-bottom: 10px;
 font-size: 16px;
 margin-top: 20px;
+`
+
+export const SubTitleModalResume = styled(TextRec)`
+margin-top: 20px;
+font-family: 'Quicksand_500Medium';
+margin-bottom: 20px;
 `

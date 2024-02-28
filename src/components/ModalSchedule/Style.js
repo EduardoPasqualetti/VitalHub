@@ -50,7 +50,7 @@ font-size: 15px;
 `
 
 
-export const InputLoc = styled.TextInput.attrs({
+export const InputAppointment = styled.TextInput.attrs({
     placeholderTextColor: '#34898F'
 })`
 padding: 10px;

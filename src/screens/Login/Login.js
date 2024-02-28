@@ -5,8 +5,8 @@ import { ButtonGoogleTitle, ButtonTitle, ImgGoogle, TextAccount, Title } from ".
 import { Input } from "../../components/Input/Style"
 import { LinkCreate, LinkMedium } from "../../components/Link/Style"
 import { Btn, BtnGoogle } from "../../components/Button/Button"
-import { Image, Keyboard, TouchableWithoutFeedback } from "react-native"
-
+import { Keyboard, TouchableWithoutFeedback } from "react-native"
+import { AntDesign } from '@expo/vector-icons';
 
 export const Login = ({ navigation }) => {
     return (
@@ -30,7 +30,7 @@ export const Login = ({ navigation }) => {
                 </Btn>
 
                 <BtnGoogle>
-                    <ImgGoogle source={require("../../assets/GOOGLE.png")} />
+                    <AntDesign name="google" size={21} color="#496BBA" />
                     <ButtonGoogleTitle>ENTRAR COM GOOGLE</ButtonGoogleTitle>
                 </BtnGoogle>
 

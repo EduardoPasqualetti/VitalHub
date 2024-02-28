@@ -75,7 +75,7 @@ export const Home = ({navigation}) => {
             setShowModalCancel={setShowModalCancel}
             />
 
-            <ModalAppoingit tment
+            <ModalAppointment
             visible={showModalAppointment}
             setShowModalAppointment={setShowModalAppointment}
             navigation={navigation}
