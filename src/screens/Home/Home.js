@@ -7,9 +7,11 @@ import { ListComponent } from "../../components/List/List"
 import { Card } from "../../components/Card/Card"
 import { ModalCancel } from "../../components/ModalCancel/ModalCancel"
 import { ModalAppointment } from "../../components/ModalAppointment/ModalAppointment"
-import { BtnSchedule } from "../../components/Button/Button"
+import { BtnCard, BtnSchedule } from "../../components/Button/Button"
 import { FontAwesome } from '@expo/vector-icons';
 import { ModalSchedule } from "../../components/ModalSchedule/ModalSchedule"
+import { Text, TouchableOpacity } from "react-native"
+import { ModalSeeDoctor } from "../../components/ModalSeeDoctor/ModalSeeDoctor"
 
 const Lista = [
     {
@@ -18,7 +20,6 @@ const Lista = [
         idade: "22",
         horarioConsulta: "14:00",
         tipoConsulta: "Rotina",
-   
         status: "pendente",
         typeUser: "paciente"
     },
@@ -27,8 +28,7 @@ const Lista = [
         nome: "Walter",
         idade: "22",
         horarioConsulta: "14:00",
-        tipoConsulta: "Rotina",
-   
+        tipoConsulta: "Exame",
         status: "pendente",
         typeUser: "paciente"
     },
@@ -58,7 +58,7 @@ const Lista = [
         tipoConsulta: "Rotina",
         status: "pendente",
         typeUser: "medico",
-        
+
     },
     {
         id: "6",
@@ -68,7 +68,7 @@ const Lista = [
         tipoConsulta: "Urgencia",
         status: "realizado",
         typeUser: "medico",
-       
+
     },
     {
         id: "7",
@@ -78,7 +78,7 @@ const Lista = [
         tipoConsulta: "Urgencia",
         status: "cancelado",
         typeUser: "medico",
-        
+
     }
 ]
 
@@ -89,8 +89,7 @@ export const Home = ({ navigation }) => {
     const [showModalCancel, setShowModalCancel] = useState(false)
     const [showModalAppointment, setShowModalAppointment] = useState(false)
     const [showModalSchedule, setShowModalSchedule] = useState(false)
-
-    const [selectedAppointment, setSelectedAppointment] = useState(null)
+    const [showModalSeeDoctor, setShowModalSeeDoctor] = useState(false)
 
     const [userLogin, setUserLogin] = useState("paciente")
 
@@ -100,6 +99,7 @@ export const Home = ({ navigation }) => {
                 <Header nome={'Dr. Carlos'} ProfileImage={require('../../assets/medico.png')} />
 
                 <CalendarHome />
+
 
                 <FilterAppointment>
 
@@ -130,10 +130,13 @@ export const Home = ({ navigation }) => {
                     keyExtractor={(item) => item.id}
 
                     renderItem={({ item }) =>
-                        statusList == item.status && item.typeUser == 'medico' && (
-                            <Card name={item.nome} status={item.status} age={item.idade} hour={item.horarioConsulta}
+                        statusList == item.status && item.typeUser == 'paciente' && (
+                            <Card name={item.nome}
+                                status={item.status}
+                                age={item.idade}
+                                hour={item.horarioConsulta}
+                                typeAppointment={item.tipoConsulta}
                                 onPressAppointment={() => {
-                                    setSelectedAppointment(item)
                                     setShowModalAppointment(true)
                                 }}
                                 onPressCancel={() => setShowModalCancel(true)}
@@ -150,8 +153,9 @@ export const Home = ({ navigation }) => {
                     visible={showModalAppointment}
                     setShowModalAppointment={setShowModalAppointment}
                     navigation={navigation}
-                    appointmentData={selectedAppointment}
+
                 />
+
 
             </Container>
             :
@@ -184,13 +188,16 @@ export const Home = ({ navigation }) => {
                     keyExtractor={(item) => item.id}
 
                     renderItem={({ item }) =>
-                        statusList == item.status && item.typeUser == "paciente" &&(
-                            <Card name={item.nome} status={item.status} age={item.idade} hour={item.horarioConsulta}
-                                onPressAppointment={() => setShowModalAppointment(true)}
-                                onPressCancel={() => setShowModalCancel(true)}
-                            />
+                        statusList == item.status && item.typeUser == "medico" && (
+                            <TouchableOpacity onPress={() => {setShowModalSeeDoctor(true)}}>
+                                <Card name={item.nome} status={item.status} age={item.idade} hour={item.horarioConsulta}
+                                    onPressAppointment={() => setShowModalAppointment(true)}
+                                    onPressCancel={() => setShowModalCancel(true)}
+                                />
+                            </TouchableOpacity>
                         )}
                 />
+
 
                 <ModalCancel
                     visible={showModalCancel}
@@ -213,9 +220,16 @@ export const Home = ({ navigation }) => {
                     setShowModalSchedule={setShowModalSchedule}
                 />
 
+                <ModalSeeDoctor
+                    visible={showModalSeeDoctor}
+                    setShowModalSeeDoctor={setShowModalSeeDoctor}
+                    navigation={navigation}
+
+                />
+ 
 
 
             </Container>
-            
+
     )
 }

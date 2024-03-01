@@ -12,3 +12,10 @@ height: 45%;
 `
 
 
+export const ImageDoctor = styled.Image`
+width: 90%;
+height: 40%;
+margin-top: 10px;
+margin-bottom: 10px;
+border-radius: 8px;
+`

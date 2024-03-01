@@ -46,7 +46,7 @@ export const SelectDate = ({navigation}) => {
                 horarioConsulta={selectedTime}
                 />
 
-            <LinkCancel onPress={() => {navigation.navigate("HomeUser")}}>Cancelar</LinkCancel>
+            <LinkCancel onPress={() => {navigation.navigate("Home")}}>Cancelar</LinkCancel>
         </ContainerSelectDate>
     )
 }

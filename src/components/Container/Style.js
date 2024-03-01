@@ -100,3 +100,9 @@ padding-top: 20px;
 padding-left: 25px;
 padding-right: 25px;
 `
+
+export const ViewDataDoctor = styled(ViewTitleRecord)`
+width: 70%;
+margin-top: 5px;
+margin-bottom: 5px;
+`

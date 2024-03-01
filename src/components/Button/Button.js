@@ -56,3 +56,9 @@ border-radius: 8px;
 export const BtnFull = styled(Btn)`
 width: 100%;
 `
+
+
+export const BtnModalSeeDoctor = styled(Btn)`
+margin-top: 10px;
+margin-bottom: 0px;
+`

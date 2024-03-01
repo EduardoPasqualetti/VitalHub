@@ -43,7 +43,7 @@ export const SelectClinic = ({navigation}) => {
             <Btn onPress={() => {navigation.navigate("SelectDoctor")}}>
                 <ButtonTitle >CONTINUAR</ButtonTitle>
             </Btn>
-            <Cancel onPress={() => {navigation.navigate("HomeUser")}}>Cancelar</Cancel>
+            <Cancel onPress={() => {navigation.navigate("Home")}}>Cancelar</Cancel>
         </Container>
 
 

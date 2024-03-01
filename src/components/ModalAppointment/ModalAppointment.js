@@ -1,4 +1,4 @@
-    import { Image, Modal } from "react-native"
+    import { Image, Modal, Text } from "react-native"
     import { ButtonTitle, TitleProfile } from "../Title/Style"
     import { Btn } from "../Button/Button"
     import { LinkCancel } from "../Link/Style"
@@ -11,7 +11,7 @@
             setShowModalAppointment(false)
         };
 
-        const {name, age} = appointmentData || {};
+        const {nome, idade} = appointmentData || {};
 
         return(
             <Modal {...rest} visible={visible} transparent={true} animationType="fade">
@@ -19,11 +19,11 @@
                     <ContentModal>
                         <Image source={require('../../assets/nicole.png')}/>
 
-                        <TitleProfile>{name}</TitleProfile>
+                        <TitleProfile>Gabriel Victor</TitleProfile>
 
                         <ViewData>
-                            <TextAge>{age}</TextAge>
-                            <TextEmail>{name}@gmail.com</TextEmail>
+                            <TextAge>17</TextAge>
+                            <TextEmail>gabriel@gmail.com</TextEmail>
                         </ViewData>
 
                         <ButtonModal onPress={() => {onPressHandler()}} >

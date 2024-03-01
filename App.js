@@ -14,7 +14,6 @@ import { useFonts, MontserratAlternates_600SemiBold, MontserratAlternates_500Med
 import { Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_400Regular } from '@expo-google-fonts/quicksand';
 import { MedicalRecord } from './src/screens/MedicalRecord/MedicalRecord';
 import { Home } from './src/screens/Home/Home';
-import { HomeUser } from './src/screens/HomeUser/HomeUser';
 import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
 import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
 import { SelectDate } from './src/screens/SelectDate/SelectDate';
@@ -61,13 +60,7 @@ export default function App() {
 
           options={{title: 'Home'}}
           />
-        <Stack.Screen
-          name='HomeUser'
-          
-          component={HomeUser}
 
-          options={{title: 'HomeUser'}}
-          />
 
         <Stack.Screen
           name="Login"

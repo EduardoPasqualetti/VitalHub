@@ -6,7 +6,7 @@ export const Card = ({
     status = "pendente",
     onPressCancel,
     onPressAppointment,
-    name, age, hour}) => {
+    name, age, hour, typeAppointment}) => {
 
 
     return (
@@ -21,7 +21,7 @@ export const Card = ({
                     <ProfileData>
                         <TextAge>{age} anos</TextAge>
                         <ImagePoint source={require('../../assets/point.png')} />
-                        <TextBold>Rotina</TextBold>
+                        <TextBold>{typeAppointment}</TextBold>
                     </ProfileData>
                 </DataProfile>
                 <ViewRow>
