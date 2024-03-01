@@ -43,6 +43,7 @@ margin-top: 120px;
 export const ViewFormat = styled.View`
 flex-direction: row;
 gap: 35px;
+height: 100px;
 `
 
 export const ViewTitle = styled.View`
@@ -85,4 +86,17 @@ export const ContainerSelectDate = styled.View`
 flex: 1;
 align-self: center;
 width: 90%;
+`
+
+export const ViewLocal = styled.View`
+height: 57%;
+margin-top: 360px;
+background-color: #fff;
+width: 100%;
+border-radius: 20px;
+position: absolute;
+align-items: center;
+padding-top: 20px;
+padding-left: 25px;
+padding-right: 25px;
 `

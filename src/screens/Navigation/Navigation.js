@@ -20,6 +20,8 @@ export const Navigation = ({navigation}) => {
             onPress={() => navigation.navigate("SelectDoctor")}/>
             <Button title='SelectDate'
             onPress={() => navigation.navigate("SelectDate")}/>
+            <Button title='SeeLocalAppointment'
+            onPress={() => navigation.navigate("SeeLocalAppointment")}/>
         </View>
     )
 }   

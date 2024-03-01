@@ -10,6 +10,7 @@ import { ModalAppointment } from "../../components/ModalAppointment/ModalAppoint
 import { BtnSchedule } from "../../components/Button/Button"
 import { FontAwesome } from '@expo/vector-icons';
 import { ModalSchedule } from "../../components/ModalSchedule/ModalSchedule"
+import { Text } from "react-native"
 
 
 export const HomeUser = ({ navigation }) => {
@@ -31,67 +32,7 @@ export const HomeUser = ({ navigation }) => {
 
     return (
         <>
-            <Header nome={'Richard Kosta'} ProfileImage={require('../../assets/garro.jpeg')} />
-            <Container>
-                <CalendarHome />
-
-                <FilterAppointment>
-                    <BtnAppointment
-                        textButton={'Pendente'}
-                        clickButton={statusList === 'pendente'}
-                        onPress={() => setStatusList('pendente')}
-                    />
-
-                    <BtnAppointment
-                        textButton={'Realizadas'}
-                        clickButton={statusList === 'realizado'}
-                        onPress={() => setStatusList('realizado')}
-                    />
-
-                    <BtnAppointment
-                        textButton={'Canceladas'}
-                        clickButton={statusList === 'cancelado'}
-                        onPress={() => setStatusList('cancelado')}
-                    />
-                </FilterAppointment>
-
-                <ListComponent
-                    data={Consultas}
-                    keyExtractor={(item) => item.id}
-
-                    renderItem={({ item }) =>
-                        statusList == item.situacao && (
-                            <Card name={item.nomeMedico} situacao={item.situacao} age={item.age} hour={item.hour}
-                                onPressAppointment={() => setShowModalAppointment(true)}
-                                onPressCancel={() => setShowModalCancel(true)}
-                            />
-                        )}
-                />
-
-                <ModalCancel
-                    visible={showModalCancel}
-                    setShowModalCancel={setShowModalCancel}
-                />
-
-                <ModalAppointment
-                    visible={showModalAppointment}
-                    setShowModalAppointment={setShowModalAppointment}
-                    navigation={navigation}
-                />
-
-                <BtnSchedule onPress={() => setShowModalSchedule(true)}>
-                    <FontAwesome name="stethoscope" size={40} color="white" />
-                </BtnSchedule>
-
-                <ModalSchedule
-                visible={showModalSchedule}
-                navigation={navigation}
-                setShowModalSchedule={setShowModalSchedule}
-                />
-
-
-
-            </Container>
+            <Text>aaaaaaaaaaaaaaaaaaaaaaaaaaaa</Text>
         </>
     )
 }

@@ -4,7 +4,7 @@ import { ButtonTitle, SubTitleModalResume, TitleProfile } from "../Title/Style"
 import {  LinkCancelMargin } from "../Link/Style"
 import { Btn } from "../Button/Button"
 
-export const ModalResumeAppointment = ({ dataConsulta,navigation, visible, setShowModalResume, ...rest }) => {
+export const ModalResumeAppointment = ({ dataConsulta, horarioConsulta, navigation, visible, setShowModalResume, ...rest }) => {
     return (
         <Modal {...rest} visible={visible} transparent={true} animationType="fade">
             <ViewModal>
@@ -15,7 +15,7 @@ export const ModalResumeAppointment = ({ dataConsulta,navigation, visible, setSh
 
                     <ViewData fieldHeight={50}>
                         <TitleData>Data da consulta</TitleData>
-                        <TextData>{dataConsulta}</TextData>
+                        <TextData>{dataConsulta} {horarioConsulta}</TextData>
                     </ViewData>
                     <ViewData fieldHeight={80}>
                         <TitleData>Médico(a) da consulta</TitleData>

@@ -3,7 +3,7 @@ import { ButtonCard, ButtonText, ClockCard, ContainerCard, ContentCard, DataProf
 import { AntDesign } from '@expo/vector-icons';
 
 export const Card = ({
-    situacao = "pendente",
+    status = "pendente",
     onPressCancel,
     onPressAppointment,
     name, age, hour}) => {
@@ -25,25 +25,25 @@ export const Card = ({
                     </ProfileData>
                 </DataProfile>
                 <ViewRow>
-                    <ClockCard situacao={situacao}>
-                        <AntDesign name="clockcircle" size={18} color={situacao == "pendente" ? '#49B3BA' : '#4E4B59'} />
-                        <TextBold situacao={situacao}>{hour}</TextBold>
+                    <ClockCard status={status}>
+                        <AntDesign name="clockcircle" size={18} color={status == "pendente" ? '#49B3BA' : '#4E4B59'} />
+                        <TextBold status={status}>{hour}</TextBold>
                     </ClockCard>
 
 
-                    {/* valida e mostra o tipo de botao conforme a situacao */}
+                    {/* valida e mostra o tipo de botao conforme a status */}
 
                     {
-                        situacao == "cancelado" ? (
+                        status == "cancelado" ? (
                             <>
                             </>
-                        ) : situacao == "pendente" ? (
+                        ) : status == "pendente" ? (
                             <ButtonCard onPress={onPressCancel}>
-                                <ButtonText situacao={situacao}>Cancelar</ButtonText>
+                                <ButtonText status={status}>Cancelar</ButtonText>
                             </ButtonCard>
                         ) : (
                             <ButtonCard onPress={onPressAppointment}>
-                                <ButtonText situacao={situacao}>Ver Prontuário</ButtonText>
+                                <ButtonText status={status}>Ver Prontuário</ButtonText>
                             </ButtonCard>
                         )
                     }

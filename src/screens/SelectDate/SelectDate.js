@@ -8,7 +8,6 @@ import { InputAppointment } from "../../components/ModalSchedule/Style";
 import { BtnFull } from "../../components/Button/Button";
 import { LinkCancel } from "../../components/Link/Style";
 import InputSelect from "../../components/InputSelect/InputSelect";
-import { Text } from "react-native";
 import { ModalResumeAppointment } from "../../components/ModalResumeAppointment/ModalResumeAppointment";
 
 export const SelectDate = ({navigation}) => {
@@ -44,6 +43,7 @@ export const SelectDate = ({navigation}) => {
                 navigation={navigation}
                 setShowModalResume={setShowModalResume}
                 dataConsulta={selectedDate}
+                horarioConsulta={selectedTime}
                 />
 
             <LinkCancel onPress={() => {navigation.navigate("HomeUser")}}>Cancelar</LinkCancel>

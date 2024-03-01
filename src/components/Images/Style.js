@@ -6,4 +6,9 @@ width: 100%;
 height: 350px;
 `
 
+export const ImageMap = styled.Image`
+width: 100%;
+height: 45%;
+`
+
 
