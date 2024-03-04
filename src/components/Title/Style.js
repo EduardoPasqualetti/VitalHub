@@ -75,3 +75,8 @@ margin-top: 20px;
 font-family: 'Quicksand_500Medium';
 margin-bottom: 20px;
 `
+
+export const TitleCancelPhoto = styled.Text`
+font-family: 'MontserratAlternates_500Medium';
+color: #C81D25;
+`

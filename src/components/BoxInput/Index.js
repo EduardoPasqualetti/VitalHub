@@ -10,10 +10,11 @@ export const BoxInput =({
     fieldValue,
     fieldHeight = 60,
     editable = false,
-    multiline = false
+    multiline = false,
+    marginBottom = 40
 }) =>  {
     return(
-        <FieldContent fieldWidth={fieldWidth}>
+        <FieldContent fieldWidth={fieldWidth} marginBottom={marginBottom}>
             
             <InputLabel >{textLabel}</InputLabel>
             <InputText placeholder={placeholder} value={fieldValue} editable={editable}

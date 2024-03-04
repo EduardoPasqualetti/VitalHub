@@ -6,7 +6,7 @@ width: ${props => `${props.fieldWidth}%`};
 
 gap: 10px;
 
-margin-bottom: 40px;
+margin-bottom: ${props => `${props.marginBottom}px`};
 `
 
 

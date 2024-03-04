@@ -18,6 +18,7 @@ import { SelectClinic } from './src/screens/SelectClinic/SelectClinic';
 import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
 import { SelectDate } from './src/screens/SelectDate/SelectDate';
 import { SeeLocalAppointment } from './src/screens/SeeLocalAppointment/SeeLocalAppointment';
+import { SeePrescription } from './src/screens/SeePrescription/SeePrescription';
 
 
 export default function App() {
@@ -138,6 +139,7 @@ export default function App() {
 
           options={{ title: 'SelectDate' }}
         />
+
         <Stack.Screen
           name="SeeLocalAppointment"
 
@@ -145,7 +147,13 @@ export default function App() {
 
           options={{ title: 'SeeLocalAppointment' }}
         />
+        <Stack.Screen
+          name="SeePrescription"
 
+          component={SeePrescription}
+
+          options={{ title: 'SeePrescription' }}
+        />
       </Stack.Navigator>
 
     </NavigationContainer>

@@ -62,3 +62,21 @@ export const BtnModalSeeDoctor = styled(Btn)`
 margin-top: 10px;
 margin-bottom: 0px;
 `
+
+export const BtnInsertPhoto = styled.TouchableOpacity`
+width: 50%;
+height: 100%;
+background-color: #49B3BA;
+border-radius: 7px;
+flex-direction: row;
+gap: 10px;
+align-items: center;
+justify-content: center;
+`
+
+export const BtnCancelPhoto = styled.TouchableOpacity`
+width: 50%;
+height: 100%;
+align-items: center;
+justify-content: center;
+`

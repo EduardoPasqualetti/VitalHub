@@ -106,3 +106,18 @@ width: 70%;
 margin-top: 5px;
 margin-bottom: 5px;
 `
+export const ViewInsertPhoto = styled(ContentCode)`
+height: 60px;
+width: 100%;
+`
+
+export const ViewSuBTitlePrescription = styled(ViewTitleRecord)`
+width: 65%;
+`
+
+export const Line = styled.View`
+width: 100%;
+height: 2px;
+background-color: #8C8A97;
+margin-top: 40px;
+`

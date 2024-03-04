@@ -19,3 +19,8 @@ margin-top: 10px;
 margin-bottom: 10px;
 border-radius: 8px;
 `
+
+export const DoctorImage = styled.Image`
+width: 100%;
+height: 300px;
+`

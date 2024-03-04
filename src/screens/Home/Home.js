@@ -91,7 +91,7 @@ export const Home = ({ navigation }) => {
     const [showModalSchedule, setShowModalSchedule] = useState(false)
     const [showModalSeeDoctor, setShowModalSeeDoctor] = useState(false)
 
-    const [userLogin, setUserLogin] = useState("paciente")
+    const [userLogin, setUserLogin] = useState("medico")
 
     return (
         userLogin == "medico" ?
@@ -187,6 +187,10 @@ export const Home = ({ navigation }) => {
                     data={Lista}
                     keyExtractor={(item) => item.id}
 
+
+
+
+                    
                     renderItem={({ item }) =>
                         statusList == item.status && item.typeUser == "medico" && (
                             <TouchableOpacity onPress={() => {setShowModalSeeDoctor(true)}}>
