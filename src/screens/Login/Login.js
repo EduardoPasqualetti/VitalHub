@@ -9,6 +9,11 @@ import { Keyboard, TouchableWithoutFeedback } from "react-native"
 import { AntDesign } from '@expo/vector-icons';
 
 export const Login = ({ navigation }) => {
+
+    async function Login() {
+        navigation.navigate("Main")
+    }
+
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
             <Container>
@@ -25,7 +30,7 @@ export const Login = ({ navigation }) => {
                 <LinkMedium onPress={() => navigation.navigate("Recover")} >Esqueceu sua senha?</LinkMedium>
 
 
-                <Btn onPress={() => navigation.navigate("Profile")}>
+                <Btn onPress={() => Login}>
                     <ButtonTitle>ENTRAR</ButtonTitle>
                 </Btn>
 

@@ -91,7 +91,7 @@ export const Home = ({ navigation }) => {
     const [showModalSchedule, setShowModalSchedule] = useState(false)
     const [showModalSeeDoctor, setShowModalSeeDoctor] = useState(false)
 
-    const [userLogin, setUserLogin] = useState("medico")
+    const [userLogin, setUserLogin] = useState("paciente")
 
     return (
         userLogin == "medico" ?

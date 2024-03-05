@@ -19,9 +19,11 @@ import { SelectDoctor } from './src/screens/SelectDoctor/SelectDoctor';
 import { SelectDate } from './src/screens/SelectDate/SelectDate';
 import { SeeLocalAppointment } from './src/screens/SeeLocalAppointment/SeeLocalAppointment';
 import { SeePrescription } from './src/screens/SeePrescription/SeePrescription';
+import { Main } from './src/screens/Main/Main';
 
 
 export default function App() {
+  ''
 
   const [fontsLoaded, fontsError] = useFonts({
     MontserratAlternates_600SemiBold,
@@ -47,21 +49,12 @@ export default function App() {
       }}>
 
         <Stack.Screen
-          name='Navigation'
+          name='Main'
 
-          component={Navigation}
+          component={Main}
 
-          options={{title: 'Navigation'}}
+
         />
-
-        <Stack.Screen
-          name='Home'
-          
-          component={Home}
-
-          options={{title: 'Home'}}
-          />
-
 
         <Stack.Screen
           name="Login"
@@ -70,6 +63,25 @@ export default function App() {
 
           options={{ title: 'Login' }}
         />
+
+        {/* <Stack.Screen
+          name='Navigation'
+
+          component={Navigation}
+
+          options={{ title: 'Navigation' }}
+        /> */}
+
+        <Stack.Screen
+          name='Home'
+
+          component={Home}
+
+          options={{ title: 'Home' }}
+        />
+
+
+
 
         <Stack.Screen
           name="MedicalRecord"
