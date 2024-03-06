@@ -7,6 +7,11 @@ import { Btn } from "../../components/Button/Button"
 import { LinkCancel } from "../../components/Link/Style"
 
 export const Register = ({navigation}) => {
+
+    async function Register() {
+        navigation.replace("Main")
+    }
+
     return(
         <Container>
             <Logo source={require('../../assets/logo.png')}></Logo>
@@ -19,7 +24,7 @@ export const Register = ({navigation}) => {
             <Input placeholder={"Senha"}/>
             <Input placeholder={"Confirmar senha"}/>
 
-            <Btn>
+            <Btn onPress={() => Register()}>
                 <ButtonTitle>CADASTRAR</ButtonTitle>
             </Btn>
 

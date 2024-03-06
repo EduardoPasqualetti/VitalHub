@@ -40,10 +40,10 @@ export const SelectClinic = ({navigation}) => {
                     )}
                 /> }
 
-            <Btn onPress={() => {navigation.navigate("SelectDoctor")}}>
+            <Btn onPress={() => {navigation.replace("SelectDoctor")}}>
                 <ButtonTitle >CONTINUAR</ButtonTitle>
             </Btn>
-            <Cancel onPress={() => {navigation.navigate("Home")}}>Cancelar</Cancel>
+            <Cancel onPress={() => {navigation.replace("Home")}}>Cancelar</Cancel>
         </Container>
 
 

@@ -20,6 +20,7 @@ import { SelectDate } from './src/screens/SelectDate/SelectDate';
 import { SeeLocalAppointment } from './src/screens/SeeLocalAppointment/SeeLocalAppointment';
 import { SeePrescription } from './src/screens/SeePrescription/SeePrescription';
 import { Main } from './src/screens/Main/Main';
+import { InsertRecord } from './src/screens/InsertRecord/InsertRecord';
 
 
 export default function App() {
@@ -43,10 +44,16 @@ export default function App() {
     // Envolve a estrutura da navegacao
     <NavigationContainer>
 
-
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
+        <Stack.Screen
+          name="Login"
+
+          component={Login}
+
+          options={{ title: 'Login' }}
+        />
 
         <Stack.Screen
           name='Main'
@@ -54,14 +61,6 @@ export default function App() {
           component={Main}
 
 
-        />
-
-        <Stack.Screen
-          name="Login"
-
-          component={Login}
-
-          options={{ title: 'Login' }}
         />
 
         {/* <Stack.Screen
@@ -81,14 +80,19 @@ export default function App() {
         />
 
 
-
-
         <Stack.Screen
           name="MedicalRecord"
 
           component={MedicalRecord}
 
           options={{ title: 'MedicalRecord' }}
+        />
+        <Stack.Screen
+          name="InsertRecord"
+
+          component={InsertRecord}
+
+          options={{ title: 'InsertRecord' }}
         />
 
         <Stack.Screen

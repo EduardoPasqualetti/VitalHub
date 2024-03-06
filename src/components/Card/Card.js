@@ -3,7 +3,7 @@ import { ButtonCard, ButtonText, ClockCard, ContainerCard, ContentCard, DataProf
 import { AntDesign } from '@expo/vector-icons';
 
 export const Card = ({
-    status = "pendente",
+    status = "agendada",
     onPressCancel,
     onPressAppointment,
     name, age, hour, typeAppointment}) => {
@@ -26,7 +26,7 @@ export const Card = ({
                 </DataProfile>
                 <ViewRow>
                     <ClockCard status={status}>
-                        <AntDesign name="clockcircle" size={18} color={status == "pendente" ? '#49B3BA' : '#4E4B59'} />
+                        <AntDesign name="clockcircle" size={18} color={status == "agendada" ? '#49B3BA' : '#4E4B59'} />
                         <TextBold status={status}>{hour}</TextBold>
                     </ClockCard>
 
@@ -34,10 +34,10 @@ export const Card = ({
                     {/* valida e mostra o tipo de botao conforme a status */}
 
                     {
-                        status == "cancelado" ? (
+                        status == "cancelada" ? (
                             <>
                             </>
-                        ) : status == "pendente" ? (
+                        ) : status == "agendada" ? (
                             <ButtonCard onPress={onPressCancel}>
                                 <ButtonText status={status}>Cancelar</ButtonText>
                             </ButtonCard>

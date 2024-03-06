@@ -43,7 +43,7 @@ margin-bottom: 50px;
 
 export const BtnSchedule = styled.TouchableOpacity`
 align-self: flex-end;
-margin-bottom: 80px;
+margin-bottom: 30px;
 margin-right: 30px;
 width: 75px;
 height: 75px;

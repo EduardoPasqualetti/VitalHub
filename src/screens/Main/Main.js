@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import {ContentIcon, TextIcon} from './Style'
 
 const BottomTab = createBottomTabNavigator()
 
@@ -21,11 +22,21 @@ export const Main = () => {
             tabBarIcon: ({focused}) => {
                 if (route.name === 'Home') {
                     return (
-                        <></>
+                        <ContentIcon tabBarActiveBackgroundColor={focused ? "#ECF2FF" : 'transparent'}>
+                            <FontAwesome name="calendar" size={20} color='#4E4B59' />
+                            {focused && <TextIcon>Agenda</TextIcon>}
+                        </ContentIcon>
                     )
-                }else{
-
+                }else  {
+                    return(
+                    <ContentIcon>
+                        <FontAwesome name="user-circle" size={20} color='#4E4B59'/>
+                        {focused && <TextIcon>Perfil</TextIcon>}
+                    </ContentIcon>
+                    )
                 }
+                    
+                
             }
           })}
           >

@@ -20,7 +20,7 @@ const Lista = [
         idade: "22",
         horarioConsulta: "14:00",
         tipoConsulta: "Rotina",
-        status: "pendente",
+        status: "agendada",
         typeUser: "paciente"
     },
     {
@@ -29,7 +29,7 @@ const Lista = [
         idade: "22",
         horarioConsulta: "14:00",
         tipoConsulta: "Exame",
-        status: "pendente",
+        status: "agendada",
         typeUser: "paciente"
     },
     {
@@ -38,7 +38,7 @@ const Lista = [
         idade: "28",
         horarioConsulta: "15:00",
         tipoConsulta: "Urgencia",
-        status: "realizado",
+        status: "realizada",
         typeUser: "paciente"
     },
     {
@@ -47,7 +47,7 @@ const Lista = [
         idade: "28",
         horarioConsulta: "15:00",
         tipoConsulta: "Urgencia",
-        status: "cancelado",
+        status: "cancelada",
         typeUser: "paciente"
     },
     {
@@ -56,7 +56,7 @@ const Lista = [
         idade: "22",
         horarioConsulta: "14:00",
         tipoConsulta: "Rotina",
-        status: "pendente",
+        status: "agendada",
         typeUser: "medico",
 
     },
@@ -66,7 +66,7 @@ const Lista = [
         idade: "36",
         horarioConsulta: "15:20",
         tipoConsulta: "Urgencia",
-        status: "realizado",
+        status: "realizada",
         typeUser: "medico",
 
     },
@@ -76,7 +76,7 @@ const Lista = [
         idade: "28",
         horarioConsulta: "16:00",
         tipoConsulta: "Urgencia",
-        status: "cancelado",
+        status: "cancelada",
         typeUser: "medico",
 
     }
@@ -84,14 +84,14 @@ const Lista = [
 
 export const Home = ({ navigation }) => {
 
-    const [statusList, setStatusList] = useState("pendente")
+    const [statusList, setStatusList] = useState("agendada")
 
     const [showModalCancel, setShowModalCancel] = useState(false)
     const [showModalAppointment, setShowModalAppointment] = useState(false)
     const [showModalSchedule, setShowModalSchedule] = useState(false)
     const [showModalSeeDoctor, setShowModalSeeDoctor] = useState(false)
 
-    const [userLogin, setUserLogin] = useState("paciente")
+    const [userLogin, setUserLogin] = useState("medico")
 
     return (
         userLogin == "medico" ?
@@ -104,21 +104,21 @@ export const Home = ({ navigation }) => {
                 <FilterAppointment>
 
                     <BtnAppointment
-                        textButton={'Pendente'}
-                        clickButton={statusList === 'pendente'}
-                        onPress={() => setStatusList('pendente')}
+                        textButton={'Agendadas'}
+                        clickButton={statusList === 'agendada'}
+                        onPress={() => setStatusList('agendada')}
                     />
 
                     <BtnAppointment
                         textButton={'Realizadas'}
-                        clickButton={statusList === 'realizado'}
-                        onPress={() => setStatusList('realizado')}
+                        clickButton={statusList === 'realizada'}
+                        onPress={() => setStatusList('realizada')}
                     />
 
                     <BtnAppointment
                         textButton={'Canceladas'}
-                        clickButton={statusList === 'cancelado'}
-                        onPress={() => setStatusList('cancelado')} />
+                        clickButton={statusList === 'cancelada'}
+                        onPress={() => setStatusList('cancelada')} />
 
 
                 </FilterAppointment>
@@ -129,19 +129,46 @@ export const Home = ({ navigation }) => {
                     data={Lista}
                     keyExtractor={(item) => item.id}
 
-                    renderItem={({ item }) =>
-                        statusList == item.status && item.typeUser == 'paciente' && (
-                            <Card name={item.nome}
-                                status={item.status}
-                                age={item.idade}
-                                hour={item.horarioConsulta}
-                                typeAppointment={item.tipoConsulta}
-                                onPressAppointment={() => {
-                                    setShowModalAppointment(true)
-                                }}
-                                onPressCancel={() => setShowModalCancel(true)}
-                            />
-                        )}
+                    renderItem={({ item }) => {
+                        if (statusList === 'agendada' && item.status === "agendada" && item.typeUser == 'paciente') {
+                            return (
+                                <TouchableOpacity onPress={() => { setShowModalAppointment(true) }}>
+                                    <Card name={item.nome}
+                                        status={item.status}
+                                        age={item.idade}
+                                        hour={item.horarioConsulta}
+                                        typeAppointment={item.tipoConsulta}
+                                        onPressCancel={() => setShowModalCancel(true)}
+                                    />
+                                </TouchableOpacity>
+                            )
+                        } else if (statusList === 'realizada' && item.status === "realizada" && item.typeUser == 'paciente') {
+                            return (
+                                    <Card name={item.nome}
+                                        status={item.status}
+                                        age={item.idade}
+                                        hour={item.horarioConsulta}
+                                        typeAppointment={item.tipoConsulta}
+                                        onPressAppointment={() => {
+                                            navigation.replace('MedicalRecord')
+                                        }}
+                                    />
+
+                            )
+                        } else if (statusList === 'cancelada' && item.status === "cancelada" && item.typeUser == 'paciente') {
+                            return (
+                                    <Card name={item.nome}
+                                        status={item.status}
+                                        age={item.idade}
+                                        hour={item.horarioConsulta}
+                                        typeAppointment={item.tipoConsulta}
+                                    />
+                            )
+                        }
+                    }
+
+
+                    }
                 />
 
                 <ModalCancel
@@ -165,21 +192,21 @@ export const Home = ({ navigation }) => {
 
                 <FilterAppointment>
                     <BtnAppointment
-                        textButton={'Pendente'}
-                        clickButton={statusList === 'pendente'}
-                        onPress={() => setStatusList('pendente')}
+                        textButton={'Agendadas'}
+                        clickButton={statusList === 'agendada'}
+                        onPress={() => setStatusList('agendada')}
                     />
 
                     <BtnAppointment
                         textButton={'Realizadas'}
-                        clickButton={statusList === 'realizado'}
-                        onPress={() => setStatusList('realizado')}
+                        clickButton={statusList === 'realizada'}
+                        onPress={() => setStatusList('realizada')}
                     />
 
                     <BtnAppointment
                         textButton={'Canceladas'}
-                        clickButton={statusList === 'cancelado'}
-                        onPress={() => setStatusList('cancelado')}
+                        clickButton={statusList === 'cancelada'}
+                        onPress={() => setStatusList('cancelada')}
                     />
                 </FilterAppointment>
 
@@ -190,16 +217,44 @@ export const Home = ({ navigation }) => {
 
 
 
-                    
-                    renderItem={({ item }) =>
-                        statusList == item.status && item.typeUser == "medico" && (
-                            <TouchableOpacity onPress={() => {setShowModalSeeDoctor(true)}}>
-                                <Card name={item.nome} status={item.status} age={item.idade} hour={item.horarioConsulta}
-                                    onPressAppointment={() => setShowModalAppointment(true)}
-                                    onPressCancel={() => setShowModalCancel(true)}
-                                />
-                            </TouchableOpacity>
-                        )}
+
+                    renderItem={({ item }) => {
+                        if (statusList === 'agendada' && item.status === "agendada" && item.typeUser == 'medico') {
+                            return (
+                                <TouchableOpacity onPress={() => { setShowModalSeeDoctor(true) }}>
+                                    <Card name={item.nome}
+                                        status={item.status}
+                                        age={item.idade}
+                                        hour={item.horarioConsulta}
+                                        typeAppointment={item.tipoConsulta}
+                                        onPressCancel={() => setShowModalCancel(true)}
+                                    />
+                                </TouchableOpacity>
+                            )
+                        } else if (statusList === 'realizada' && item.status === "realizada" && item.typeUser == 'medico') {
+                            return(
+                                    <Card name={item.nome}
+                                        status={item.status}
+                                        age={item.idade}
+                                        hour={item.horarioConsulta}
+                                        typeAppointment={item.tipoConsulta}
+                                        onPressAppointment={() => {
+                                            navigation.replace('SeePrescription')
+                                        }}
+                                    />
+                            )
+                        } else if (statusList === 'cancelada' && item.status === "cancelada" && item.typeUser == 'medico') {
+                            return(
+                                    <Card name={item.nome}
+                                        status={item.status}
+                                        age={item.idade}
+                                        hour={item.horarioConsulta}
+                                        typeAppointment={item.tipoConsulta}
+                                        
+                                    />
+                            )
+                        }
+                    }}
                 />
 
 
@@ -230,7 +285,7 @@ export const Home = ({ navigation }) => {
                     navigation={navigation}
 
                 />
- 
+
 
 
             </Container>

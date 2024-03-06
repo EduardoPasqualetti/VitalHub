@@ -16,7 +16,7 @@ export const ModalSchedule = ({ navigation, visible, setShowModalSchedule , ...r
   // const onPressOption = (option) => {
   //   setSelectedOption(option);
   //   setShowOptions(false);
-  // };
+  // };s
 
   const onPressHandle = () => {
     navigation.navigate("SelectClinic");

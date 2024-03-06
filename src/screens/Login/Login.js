@@ -11,7 +11,7 @@ import { AntDesign } from '@expo/vector-icons';
 export const Login = ({ navigation }) => {
 
     async function Login() {
-        navigation.navigate("Main")
+        navigation.replace("Main")
     }
 
     return (
@@ -30,7 +30,7 @@ export const Login = ({ navigation }) => {
                 <LinkMedium onPress={() => navigation.navigate("Recover")} >Esqueceu sua senha?</LinkMedium>
 
 
-                <Btn onPress={() => Login}>
+                <Btn onPress={() => Login()}>
                     <ButtonTitle>ENTRAR</ButtonTitle>
                 </Btn>
 

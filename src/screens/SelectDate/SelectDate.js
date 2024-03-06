@@ -6,7 +6,7 @@ import { Title } from "../SelectClinic/Style"
 import { ButtonTitle, LabelSchedule } from "../../components/Title/Style";
 import { InputAppointment } from "../../components/ModalSchedule/Style";
 import { BtnFull } from "../../components/Button/Button";
-import { LinkCancel } from "../../components/Link/Style";
+import { LinkCancel, LinkCancelMargin } from "../../components/Link/Style";
 import InputSelect from "../../components/InputSelect/InputSelect";
 import { ModalResumeAppointment } from "../../components/ModalResumeAppointment/ModalResumeAppointment";
 
@@ -46,7 +46,7 @@ export const SelectDate = ({navigation}) => {
                 horarioConsulta={selectedTime}
                 />
 
-            <LinkCancel onPress={() => {navigation.navigate("Home")}}>Cancelar</LinkCancel>
+            <LinkCancelMargin onPress={() => {navigation.navigate("Home")}}>Cancelar</LinkCancelMargin>
         </ContainerSelectDate>
     )
 }

@@ -7,7 +7,7 @@
     export const ModalAppointment = ({appointmentData, navigation, visible, setShowModalAppointment, ...rest}) => {
 
         const onPressHandler = () => {
-            navigation.navigate("MedicalRecord");
+            navigation.navigate("InsertRecord");
             setShowModalAppointment(false)
         };
 

@@ -31,7 +31,7 @@ export const ModalResumeAppointment = ({ dataConsulta, horarioConsulta, navigati
                         <TextData>Rotina</TextData>
                     </ViewData>
                     <Btn>
-                        <ButtonTitle >CONFIRMAR</ButtonTitle>
+                        <ButtonTitle onPress={() => navigation.navigate("Home")} >CONFIRMAR</ButtonTitle>
                     </Btn>
 
                     <LinkCancelMargin onPress={() => setShowModalResume(false)}>Cancelar</LinkCancelMargin>
