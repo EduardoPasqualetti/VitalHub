@@ -65,7 +65,7 @@ export const SeePrescription = ({navigation}) => {
                 marginBottom={0}
             />
 
-            <LinkCancelMargin onPress={() => {navigation.navigate("Home")}}>Voltar</LinkCancelMargin>
+            <LinkCancelMargin onPress={() => {navigation.replace("Main")}}>Voltar</LinkCancelMargin>
 
             </ContainerProfile>
         </ContainerScroll>

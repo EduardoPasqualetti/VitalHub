@@ -6,7 +6,7 @@ import { BoxInput } from "../../components/BoxInput/Index"
 import { Btn, ButtonGoOut } from "../../components/Button/Button"
 import { StatusBar } from "expo-status-bar"
 import { useState } from "react"
-import { LinkCancelMargin } from "../../components/Link/Style"
+import {  LinkCancelMargin } from "../../components/Link/Style"
 
 export const Profile = ({navigation}) => {
 
@@ -54,9 +54,7 @@ export const Profile = ({navigation}) => {
                             <ButtonTitle>EDITAR</ButtonTitle>
                         </Btn>
 
-                        <ButtonGoOut onPress={() => {navigation.navigate("Navigation")}}>
-                            <ButtonTitle>SAIR DO APP</ButtonTitle>
-                        </ButtonGoOut>
+                    <LinkCancelMargin onPress={() => navigation.replace("Main")}>Voltar</LinkCancelMargin>
                     </ContainerProfile>
                 </>
             ) : (

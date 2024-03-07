@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
     color: '#34898F',
     fontSize: 17,
     fontFamily: 'MontserratAlternates_600SemiBold',
-    textAlign: 'left'
+    textAlign: 'left',
   }
 });

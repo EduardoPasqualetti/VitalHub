@@ -22,26 +22,28 @@ export const InsertRecord = ({navigation}) => {
                  placeholder={'Descricao'}
                  fieldHeight={150}
                  insertRecord={true}
+                 multiline={true}
                 />
                 <BoxInput
                  textLabel={'Diagnóstico do paciente'}
                  placeholder={'Diagnóstico'}
                  fieldHeight={80}
                  insertRecord={true}
+                 multiline={true}
                 />
                 <BoxInput
                  textLabel={'Prescrição médica'}
-                 placeholder={'Prescrição'}
+                 placeholder={'Prescrição medica'}
                  fieldHeight={150}
                  insertRecord={true}
+                 multiline={true}
                 />
 
-
-                <Btn onPress={() => navigation.replace("Home")}>
+                <Btn onPress={() => navigation.replace("MedicalRecord")}>
                     <ButtonTitle>SALVAR</ButtonTitle>
                 </Btn>
 
-                <LinkCancelMargin onPress={() => navigation.replace("Home")}>Cancelar Edição</LinkCancelMargin>
+                <LinkCancelMargin onPress={() => navigation.replace("Main")}>Cancelar</LinkCancelMargin>
             </ContainerProfile>
         </ContainerScroll>
     )

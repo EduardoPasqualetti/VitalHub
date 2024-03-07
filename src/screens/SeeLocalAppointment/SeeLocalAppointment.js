@@ -30,7 +30,7 @@ export const SeeLocalAppointment = ({navigation}) => {
                     />
 
                 </ViewFormat>
-                <LinkCancelMargin onPress={() => {navigation.navigate("Home")}}>Voltar</LinkCancelMargin>
+                <LinkCancelMargin onPress={() => {navigation.navigate("Main")}}>Voltar</LinkCancelMargin>
             </ViewLocal>
         </Container>
     )

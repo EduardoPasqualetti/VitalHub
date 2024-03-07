@@ -5,6 +5,7 @@ import { Container } from "../../components/Container/Style"
 import { ListComponent } from "../../components/List/List"
 import { ButtonTitle } from "../../components/Title/Style"
 import { BtnSelect, Cancel, Title } from "../SelectClinic/Style"
+import { ModalSchedule } from "../../components/ModalSchedule/ModalSchedule"
 
 
 const Medicos = [
@@ -20,6 +21,14 @@ const Medicos = [
 export const SelectDoctor = ({ navigation }) => {
 
     const [selectedDoctor, setSelectedDoctor] = useState(null);
+    const [showModalSchedule, setShowModalSchedule] = useState(false)
+
+    const onPressHandle = () => {
+        setShowModalSchedule(true)
+        navigation.navigate("Main");
+
+    }
+
 
     return (
         <Container>
@@ -39,10 +48,16 @@ export const SelectDoctor = ({ navigation }) => {
                 )}
             />}
 
+            <ModalSchedule
+                visible={showModalSchedule}
+                navigation={navigation}
+                setShowModalSchedule={setShowModalSchedule}
+            />
+
             <Btn onPress={() => navigation.replace("SelectDate")}>
                 <ButtonTitle>CONTINUAR</ButtonTitle>
             </Btn>
-            <Cancel onPress={() => { navigation.replace("Home") }}>Cancelar</Cancel>
+            <Cancel onPress={() => onPressHandle()}>Cancelar</Cancel>
         </Container>
     )
 }

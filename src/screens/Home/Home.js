@@ -43,7 +43,7 @@ const Lista = [
     },
     {
         id: "3",
-        nome: "Gabriel Victor",
+        nome: "Rubens",
         idade: "28",
         horarioConsulta: "15:00",
         tipoConsulta: "Urgencia",
@@ -91,12 +91,13 @@ export const Home = ({ navigation }) => {
     const [showModalSchedule, setShowModalSchedule] = useState(false)
     const [showModalSeeDoctor, setShowModalSeeDoctor] = useState(false)
 
-    const [userLogin, setUserLogin] = useState("medico")
+    const [userLogin, setUserLogin] = useState("paciente")
+
 
     return (
         userLogin == "medico" ?
             <Container>
-                <Header nome={'Dr. Carlos'} ProfileImage={require('../../assets/medico.png')} />
+                <Header nome={'Dr. Joao'} ProfileImage={require('../../assets/medico.png')} onPress={() => navigation.replace("Profile")}/>
 
                 <CalendarHome />
 
@@ -187,7 +188,7 @@ export const Home = ({ navigation }) => {
             </Container>
             :
             <Container>
-                <Header nome={'Richard Kosta'} ProfileImage={require('../../assets/garro.jpeg')} />
+                <Header nome={'Richard Kosta'} ProfileImage={require('../../assets/garro.jpeg')} onPress={() => navigation.replace("Profile")}/>
                 <CalendarHome />
 
                 <FilterAppointment>

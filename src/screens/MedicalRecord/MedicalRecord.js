@@ -48,7 +48,7 @@ export const MedicalRecord = ({navigation}) => {
                             <ButtonTitle>EDITAR</ButtonTitle>
                         </Btn>
 
-                        <LinkCancelMargin onPress={() => {navigation.navigate("Home")}}>Cancelar</LinkCancelMargin>
+                        <LinkCancelMargin onPress={() => {navigation.replace("Main")}}>Cancelar</LinkCancelMargin>
                     </ContainerProfile>
 
                 </>

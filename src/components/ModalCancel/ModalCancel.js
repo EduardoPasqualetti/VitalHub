@@ -12,7 +12,7 @@ export const ModalCancel = ({ visible, setShowModalCancel, ...rest }) => {
                     <Title>Cancelar consulta</Title>
                     <TextRec>Ao cancelar essa consulta, abrirá uma possível disponibilidade no seu horário, deseja mesmo cancelar essa consulta?</TextRec>
 
-                    <Btn>
+                    <Btn onPress={() => setShowModalCancel(false)}>
                         <ButtonTitle>CONFIRMAR</ButtonTitle>
                     </Btn>
 

@@ -4,7 +4,7 @@ export const FieldContent = styled.View`
 
 width: ${props => `${props.fieldWidth}%`};
 
-gap: 10px;
+gap: 12px;
 
 margin-bottom: ${props => `${props.marginBottom}px`};
 `

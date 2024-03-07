@@ -18,16 +18,17 @@ export const ModalSchedule = ({ navigation, visible, setShowModalSchedule , ...r
   //   setShowOptions(false);
   // };s
 
-  const onPressHandle = () => {
-    navigation.navigate("SelectClinic");
-    setShowModalSchedule(false)
+  async function onPressHandle() {
+    await setShowModalSchedule(false)
+    navigation.replace("SelectClinic");
+    
   }
 
   const[typeAppointment,setTypeAppointment] = useState(null)
 
 
   return (
-    <Modal {...rest} visible={visible} transparent={true} animationType="fade">
+    <Modal {...rest} visible={visible} transparent={true} animationType="fade" animationsOutTiming={0}>
       <ViewModal>
         <ContentModal>
           <TitleProfile>Agendar consulta</TitleProfile>

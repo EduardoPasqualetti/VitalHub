@@ -23,14 +23,14 @@ export const Main = () => {
                 if (route.name === 'Home') {
                     return (
                         <ContentIcon tabBarActiveBackgroundColor={focused ? "#ECF2FF" : 'transparent'}>
-                            <FontAwesome name="calendar" size={20} color='#4E4B59' />
+                            <FontAwesome name="calendar" size={21} color='#4E4B59' />
                             {focused && <TextIcon>Agenda</TextIcon>}
                         </ContentIcon>
                     )
                 }else  {
                     return(
-                    <ContentIcon>
-                        <FontAwesome name="user-circle" size={20} color='#4E4B59'/>
+                    <ContentIcon tabBarActiveBackgroundColor={focused ? "#ECF2FF" : 'transparent'}> 
+                        <FontAwesome name="user-circle" size={22} color='#4E4B59'/>
                         {focused && <TextIcon>Perfil</TextIcon>}
                     </ContentIcon>
                     )
