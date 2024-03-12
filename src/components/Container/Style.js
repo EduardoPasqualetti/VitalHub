@@ -99,6 +99,7 @@ align-items: center;
 padding-top: 20px;
 padding-left: 25px;
 padding-right: 25px;
+
 `
 
 export const ViewDataDoctor = styled(ViewTitleRecord)`
@@ -120,4 +121,9 @@ width: 100%;
 height: 2px;
 background-color: #8C8A97;
 margin-top: 40px;
+`
+
+export const ContainerMap = styled.View`
+width: 100%;
+height: 50%;
 `
