@@ -3,56 +3,138 @@ import { BoxInput } from "../../components/BoxInput/Index"
 import { Container, ContainerMap, ViewFormat, ViewLocal } from "../../components/Container/Style"
 import { LinkCancelMargin } from "../../components/Link/Style"
 import { SubTitleModalResume, TitleProfile } from "../../components/Title/Style"
-import { StyleSheet } from "react-native"
+import { ActivityIndicator, StyleSheet, Text } from "react-native"
 import { mapskey } from "../../Utils/MapsKey/mapsApiKey"
 import {
     requestForegroundPermissionsAsync, // solicita o acesso a localizacao
     getCurrentPositionAsync,  //recebe a localizacao atual
-  
+
     watchPositionAsync,
     LocationAccuracy,
-    
-  } from 'expo-location'
+
+} from 'expo-location'
+import { useEffect, useRef, useState } from "react"
+import MapViewDirections from "react-native-maps-directions"
 
 export const SeeLocalAppointment = ({ navigation }) => {
+    const mapReference = useRef(null)
+    const [initialPosition, setInitialPosition] = useState(null)
+    const [finalPosition, setFinalPosition] = useState({
+        latitude: -23.6497517,
+        longitude: -46.5624046
+    })
+
+
+    async function CapturarLocalizacao() {
+        const { granted } = await requestForegroundPermissionsAsync()
+
+        if (granted) {
+            const captureLocation = await getCurrentPositionAsync()
+
+            setInitialPosition(captureLocation)
+        }
+    }
+
+    useEffect(() => {
+        CapturarLocalizacao()
+
+
+        // monitora em tempo real
+        watchPositionAsync({
+            accuracy: LocationAccuracy.Highest,
+            timeInterval: 1000,
+            distanceInterval: 1,
+        }, async (response) => {
+            // recebe e guarda a nova localizacao
+            await setInitialPosition(response)
+
+            mapReference.current?.animateCamera({
+                pitch: 60,
+                center: response.coords
+            })
+
+        })
+    }, [1000])
+
+    useEffect(() => {
+        RecarregarVizualizacaoMapa()
+    }, [initialPosition])
+
+    async function RecarregarVizualizacaoMapa() {
+        if (mapReference.current && initialPosition) {
+            await mapReference.current.fitToCoordinates(
+                [{ latitude: initialPosition.coords.latitude, longitude: initialPosition.coords.longitude },
+                { latitude: finalPosition.latitude, longitude: finalPosition.longitude }
+                ],
+                {
+                    edgePadding: { top: 60, right: 60, bottom: 60, left: 60 },
+                    animated: true
+                }
+            )
+        }
+    }
+
     return (
         <Container>
             <ContainerMap>
-                <MapView
-                    initialRegion={{
-                        latitude: -23.61505157599613,
-                        longitude: -46.57090774805312,
-                        longitudeDelta: 0.005,
-                        latitudeDelta: 0.005,
+                {
+                    initialPosition != null
 
-                    }}
-                    customMapStyle={grayMapStyle}
-                    provider={PROVIDER_GOOGLE}
-                    style={styles.map}
-                >
-                    <Marker
-                        coordinate={{
-                            latitude: -23.61505157599613,
-                            longitude: -46.57090774805312,
-                            longitudeDelta: 0.005,
-                            latitudeDelta: 0.005,
-                        }}
-                        title='Clinica Aqui'
-                        description='Marcador que representa localizacao da clinica'
-                        pinColor={'blue'}
-                    />
-                    <Marker
-                        coordinate={{
-                            latitude: -23.6497517,
-                            longitude: -46.5624046,
-                            longitudeDelta: 0.005,
-                            latitudeDelta: 0.005,
-                        }}
-                        title='Voce esta aqui'
-                        description='Marcador que representa sua localizacao'
-                        pinColor={'red'}
-                    />
-                </MapView>
+                        ?
+                        <MapView
+                            initialRegion={{
+                                latitude: initialPosition.coords.latitude,
+                                longitude: initialPosition.coords.longitude,
+                                longitudeDelta: 0.005,
+                                latitudeDelta: 0.005,
+
+                            }}
+                            customMapStyle={grayMapStyle}
+                            provider={PROVIDER_GOOGLE}
+                            style={styles.map}
+                        >
+                            <Marker
+                                coordinate={{
+                                    latitude: initialPosition.coords.latitude,
+                                    longitude: initialPosition.coords.longitude,
+                                    longitudeDelta: 0.005,
+                                    latitudeDelta: 0.005,
+                                }}
+                                title='Clinica Aqui'
+                                description='Marcador que representa localizacao da clinica'
+                                pinColor={'blue'}
+                            />
+                            <MapViewDirections
+                                origin={initialPosition.coords}
+                                destination={{
+                                    latitude: -23.6497517,
+                                    longitude: -46.5624046,
+                                    longitudeDelta: 0.005,
+                                    latitudeDelta: 0.005,
+                                }}
+                                apikey={mapskey}
+                                strokeWidth={5}
+                                strokeColor='#496BBA'
+                            />
+                            <Marker
+                                coordinate={{
+                                    latitude: finalPosition.latitude,
+                                    longitude: finalPosition.longitude,
+                                    longitudeDelta: 0.005,
+                                    latitudeDelta: 0.005,
+                                }}
+                                title='Voce esta aqui'
+                                description='Marcador que representa sua localizacao'
+                                pinColor={'red'}
+                            />
+                        </MapView>
+                        :
+                        <>
+                            <Text>Localizacao nao Encontrada</Text>
+
+                            <ActivityIndicator />
+                        </>
+                }
             </ContainerMap>
             <ViewLocal>
                 <TitleProfile>Clínica Natureh</TitleProfile>
