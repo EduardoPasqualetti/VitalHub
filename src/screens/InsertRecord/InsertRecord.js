@@ -39,7 +39,7 @@ export const InsertRecord = ({navigation}) => {
                  multiline={true}
                 />
 
-                <Btn onPress={() => navigation.replace("MedicalRecord")}>
+                <Btn onPress={() => navigation.replace("Main")}>
                     <ButtonTitle>SALVAR</ButtonTitle>
                 </Btn>
 

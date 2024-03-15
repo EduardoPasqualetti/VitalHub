@@ -24,3 +24,10 @@ export const DoctorImage = styled.Image`
 width: 100%;
 height: 300px;
 `
+
+export const PhotoTaked = styled.Image`
+border-radius: 10px;
+width: 100%;
+height: 450px;
+margin-top: 25px;
+`

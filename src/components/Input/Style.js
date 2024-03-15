@@ -26,3 +26,11 @@ border-radius: 7px;
 font-size: 45px;
 padding-left: 22px;
 `
+
+export const InputExame = styled.Text`
+text-align: left;
+width: 100%;
+font-family: 'Quicksand_600SemiBold';
+color: #33303E;
+font-size: 19px;
+`

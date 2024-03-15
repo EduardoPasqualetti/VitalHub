@@ -21,6 +21,7 @@ import { SeeLocalAppointment } from './src/screens/SeeLocalAppointment/SeeLocalA
 import { SeePrescription } from './src/screens/SeePrescription/SeePrescription';
 import { Main } from './src/screens/Main/Main';
 import { InsertRecord } from './src/screens/InsertRecord/InsertRecord';
+import { Camera, CameraPhoto } from './src/components/Camera/Camera';
 
 
 export default function App() {
@@ -169,6 +170,13 @@ export default function App() {
           component={SeePrescription}
 
           options={{ title: 'SeePrescription' }}
+        />
+        <Stack.Screen
+          name="CameraPhoto"
+
+          component={CameraPhoto}
+
+          options={{ title: 'CameraPhoto' }}
         />
       </Stack.Navigator>
 
