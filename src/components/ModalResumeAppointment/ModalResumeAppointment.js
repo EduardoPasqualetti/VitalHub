@@ -4,12 +4,54 @@ import { ButtonTitle, SubTitleModalResume, TitleProfile } from "../Title/Style"
 import { LinkCancelMargin } from "../Link/Style"
 import { Btn } from "../Button/Button"
 
+import * as Notifications from "expo-notifications"
+
+Notifications.requestPermissionsAsync()
+
+
+Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+
+        shouldShowAlert: true,
+
+        shouldPlaySound: true,
+
+        shouldSetBadge: false
+    })
+})
+
 export const ModalResumeAppointment = ({ dataConsulta, horarioConsulta, navigation, visible, setShowModalResume, ...rest }) => {
+
+    const handleCallNotifications = async () => {
+
+        const { status } = await Notifications.getPermissionsAsync()
+
+        if (status !== "granted") {
+            alert("Voce nao permitiu as notificacoes estarem ativas")
+            return
+        }
+
+
+
+        // const token = await Notifications.getExpoPushTokenAsync()g
+
+        await Notifications.scheduleNotificationAsync({
+            content: {
+                title: "Consulta Agendada",
+                body: "Sua consulta foi agendada com sucesso, podendo ser vizualizada em Agendadadas.",
+                sound: true
+            },
+            trigger: {
+                seconds: 1
+            }
+        })
+    }
+
 
     async function onPressHandle() {
         await setShowModalResume(false)
-        navigation.replace("Main");
-        
+        navigation.replace("Main")
+        handleCallNotifications()
     }
 
     return (

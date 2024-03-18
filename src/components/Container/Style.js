@@ -82,7 +82,7 @@ width: 90%;
 height: 50px;
 `
 
-export const ContainerSelectDate = styled.View`
+export const ContainerSelectDate = styled.ScrollView`
 flex: 1;
 align-self: center;
 width: 90%;

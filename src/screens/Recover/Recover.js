@@ -20,7 +20,7 @@ export const Recover = ({navigation}) => {
 
             <Input placeholder={"Usuário ou E-mail"} />
 
-            <Btn onPress={() => navigation.navigate("VerifyEmail")}>
+            <Btn onPress={() => navigation.replace("VerifyEmail")}>
                 <ButtonTitle>CONTINUAR</ButtonTitle>
             </Btn>  
 

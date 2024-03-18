@@ -2,17 +2,19 @@ import { Image, Text } from "react-native";
 import { ButtonCard, ButtonText, ClockCard, ContainerCard, ContentCard, DataProfile, ImagePoint, ProfileData, ProfileImage, ProfileName, TextAge, TextBold, ViewRow } from "./Style"
 import { AntDesign } from '@expo/vector-icons';
 
+
+
+
 export const Card = ({
     status = "agendada",
     onPressCancel,
     onPressAppointment,
     name, age, hour, typeAppointment}) => {
 
-
     return (
         <ContainerCard>
             {/* Imagem do Card */}
-            <ProfileImage source={require('../../assets/gab.jpg')} />
+            <ProfileImage source={require('../../assets/nicole.png')} />
 
 
             <ContentCard>
@@ -38,7 +40,7 @@ export const Card = ({
                             <>
                             </>
                         ) : status == "agendada" ? (
-                            <ButtonCard onPress={onPressCancel}>
+                            <ButtonCard onPress={onPressCancel} >
                                 <ButtonText status={status}>Cancelar</ButtonText>
                             </ButtonCard>
                         ) : (

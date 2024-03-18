@@ -27,7 +27,7 @@ export const Login = ({ navigation }) => {
                 <Input placeholder={"Usuário ou E-mail"} />
                 <Input placeholder={"Senha"} />
 
-                <LinkMedium onPress={() => navigation.navigate("Recover")} >Esqueceu sua senha?</LinkMedium>
+                <LinkMedium onPress={() => navigation.replace("Recover")} >Esqueceu sua senha?</LinkMedium>
 
 
                 <Btn onPress={() => Login()}>
@@ -41,7 +41,7 @@ export const Login = ({ navigation }) => {
 
                 <ContentAccount>
                     <TextAccount>Nao tem Conta?</TextAccount>
-                    <LinkCreate onPress={() => navigation.navigate("Register")}>Crie uma conta agora!</LinkCreate >
+                    <LinkCreate onPress={() => navigation.replace("Register")}>Crie uma conta agora!</LinkCreate >
 
                 </ContentAccount>
 

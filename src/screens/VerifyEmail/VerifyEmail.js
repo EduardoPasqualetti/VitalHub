@@ -27,7 +27,7 @@ export const VerifyEmail = ({ navigation }) => {
                 <InputCode placeholder={'0'}></InputCode>
             </ContentCode>
 
-            <Btn onPress={() => navigation.navigate("ResetPwd")}>
+            <Btn onPress={() => navigation.replace("ResetPwd")}>
                 <ButtonTitle>ENTRAR</ButtonTitle>
             </Btn>
 
